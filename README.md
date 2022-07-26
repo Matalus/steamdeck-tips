@@ -9,6 +9,8 @@ Wiki and files relevant to my Steam Deck tinkering, and all things about NOT pla
 
 ### [:lock: EXTRA CREDIT! Setup Private RSA Keypair and disable password authentication](/ssh.md#extra-credit-setup-private-rsa-keypair-and-disable-password-authentication) 
 
+<BR><BR>
+
 ## [:godmode: Proton Tricks](/protontricks.md) (Install Windows Dependencies and Manage WINE prefixes)
 
 ### [:computer: Installing Proton Tricks (GUI)](/protontricks.md#installing-proton-tricks-gui)
