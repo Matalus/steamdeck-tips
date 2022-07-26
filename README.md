@@ -3,13 +3,13 @@ Wiki and files relevant to my Steam Deck tinkering, and all things about NOT pla
 
 **Table of Contents**
 
-## [SSH](/ssh.md) (Secure Shell)
+## [:penguin: SSH](/ssh.md) (Secure Shell)
 
 ### [:penguin: Setting up SSHD](/ssh.md#setting-up-sshd) 
 
 ### [:lock: EXTRA CREDIT! Setup Private RSA Keypair and disable password authentication](/ssh.md#extra-credit-setup-private-rsa-keypair-and-disable-password-authentication) 
 
-## [Proton Tricks](/protontricks.md) (Install Windows Dependencies and Manage WINE prefixes)
+## [:godmode: Proton Tricks](/protontricks.md) (Install Windows Dependencies and Manage WINE prefixes)
 
 ### [:computer: Installing Proton Tricks (GUI)](/protontricks.md#installing-proton-tricks-gui)
 
@@ -17,7 +17,7 @@ Wiki and files relevant to my Steam Deck tinkering, and all things about NOT pla
 
 ### [:scroll: List detected Steam Games (shell)](/protontricks.md#list-detected-steam-games-shell)
 
-### [:mag_left: Search for an available dependency](/protontricks.md#search-for-an-available-dependency)
+### [:mag: Search for an available dependency](/protontricks.md#search-for-an-available-dependency)
 
 ### [:computer: Install Windows Dependencies](/protontricks.md#install-windows-dependencies)
 
@@ -25,7 +25,7 @@ Wiki and files relevant to my Steam Deck tinkering, and all things about NOT pla
 
 ## [ :video_game: Non-Steam Games](/non-steam-games.md)
 
-### [:mag_left: Find the exe path for non-steam files](/non-steam-games.md#find-the-exe-path-for-non-steam-files)
+### [:mag: Find the exe path for non-steam files](/non-steam-games.md#find-the-exe-path-for-non-steam-files)
 
 ### [:hammer: BoilR (import non-steam shortcuts and cover art)](/non-steam-games.md#boilr-import-cover-art-from-steamgriddb)
 
