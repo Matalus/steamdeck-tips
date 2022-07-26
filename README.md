@@ -1,4 +1,4 @@
-# SteamDeck Tips
+# Steam Deck Tips
 Wiki and files relevant to my Steam Deck tinkering, and all things about NOT playing games on your portable gaming PC
 
 ## SSH
