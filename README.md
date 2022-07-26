@@ -7,7 +7,7 @@ Wiki and files relevant to my Steam Deck tinkering, and all things about NOT pla
 
 ### [Setting up SSHD](/ssh.md#setting-up-sshd) 
 
-### [EXTRA CREDIT! Setup Private RSA Keypair and disable password authentication](/ssh.md#extra-credit-setup-private-rsa-keypair-and-disable-password-authentication)
+### [:penguin: EXTRA CREDIT! Setup Private RSA Keypair and disable password authentication](/ssh.md#extra-credit-setup-private-rsa-keypair-and-disable-password-authentication) 
 
 ## [Proton Tricks](/protontricks.md) (Install Windows Dependencies and Manage WINE prefixes)
 
