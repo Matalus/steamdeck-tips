@@ -129,7 +129,7 @@ ssh deck@steamdeck
 
 
 
-## proton tricks
+## Proton Tricks
 > proton tricks is a utility that helps you tweak and install windows dependencies into your WINE prefixes to satisfy compatibility requirements
 
 ### Installing Proton Tricks (GUI)
@@ -192,7 +192,7 @@ Torchlight III (1030210)
 ```
 2. *Or* Search for installed Steam Games
 ```bash
-#Format protontricks -s GAME_NAME
+#Format: protontricks -s GAME_NAME
 #example search for "Horizon Zero Dawn"
 protontricks -s Horizon Zero Dawn
 
@@ -221,16 +221,69 @@ vcrun2005                Visual C++ 2005 libraries (mfc80,msvcp80,msvcr80) (Micr
 ### Install Windows Dependencies
 
 ```bash
-# Format protontricks APPID [options] verbs
+# Format: protontricks APPID [options] verbs
 # Install the mfc42 dll and set windows 7 compatibility
 protontricks 2914290092 -q --force mfc42 win7
 ```
 
+### Reset WINE prefix
+*When you've really F$%#& it up and nothing is working*
+```bash
+# Format: protontricks APPID annihilate
+protontricks 2914290092 annihilate
+```
+
 ## Non-Steam Games
-TBD
+ ### Find the exe path for non-steam files
+ ```bash
+ # Format: find [dir] -iname [file name (wildcards allowed, case insensitive)]
+ # find battle.net launcher EXE path
+ find /home/deck/.local/share/ -iname "battle.net*launcher*exe"
+
+ #output
+ /home/deck/.local/share/Steam/steamapps/compatdata/2738429330/pfx/drive_c/Program Files (x86)/Battle.net/Battle.net Launcher.exe
+ ```
+
+
+### BoilR (import non-steam shortcuts and cover art)
+
+> - install **BoilR** `sudo flatpak install io.github.philipk.boilr`
+> - **Application Launcher** > **All Applications** > **BoilR**
+> - **Import Games** (tab) > Click **Import your games into steam** (bottom left)
+
+### BoilR (import cover art from SteamGridDB)
+
+> - (optional) register account on `https://www.steamgriddb.com` 
+> - Create an API Key `https://www.steamgriddb.com/profile/preferences/api`
+> - Copy the `API Key`
+> - Paste it into: **Settings**  > **Authorization key**
+> - **Check* boxes for `Download Images` and `Prefer animated images`
+
 ### Battle.net
-TBD
+
+> - download `Battle.net-setup.exe` using `Chrome` in Desktop Mode
+> - Add a **Non-Steam** game to steam pointed at `/home/deck/Downloads/Battle.net-setup.exe`
+> - Accept Default installation Path and allow install to complete
+
 ### Origin (EA)
-TBD
+
+> - download `OriginThinSetup.exe` using `Chrome` in Desktop Mode
+> - Add a **Non-Steam** game to steam pointed at `/home/deck/Downloads/OriginThinSetup.exe`
+> - Accept Default installation Path and allow install to complete
+
 ### Epic Games Store
-TBD
+
+> Use `Heroic Games Launcher` for Epic and GoG
+> - install HGL `sudo flatpak install com.heroicgameslauncher.hgl`
+> - **Application Launcher** > **All Applications** > **Heroic Games Launcher**
+> - Connect to Epic Games Store with your account
+> - Install games from the **Library** tab
+> - (optional) use `BoilR` to automatically import game shorcuts into **Steam**
+
+## Logging 
+
+> Relevant Logging Directories
+- Steam Proton Logs `~/steam-*` example: `steam-17791636650569236480.log`
+- Proton Crash Logs `/tmp/proton_crashreports`
+- Heroic Games Launcher Logs `/home/deck/.var/app/com.heroicgameslauncher.hgl/config/heroic/GamesConfig`
+- Steam Launcher Logs `/home/deck/.local/share/Steam/logs/`
