@@ -39,7 +39,7 @@ sudo systemctl status sshd
 
 12. If all steps were followed SSH should be enabled, if not *ASK AN ADULT*
 
-### EXTRA CREDIT! Setup Private RSA Keypair and disable password authentication
+### Setup Private RSA Keypair and disable password authentication
 > This is the most secure way to authenticate
 > This assumes you're connecting from your `Windows 10+` gaming rig with at least `PowerShell 5.1` installed
 
