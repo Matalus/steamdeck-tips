@@ -119,11 +119,12 @@ ssh deck@steamdeck
 
 
 ## proton tricks
-
+TBD
 ## Non-Steam Games
-
+TBD
 ### Battle.net
-
+TBD
 ### Origin (EA)
-
+TBD
 ### Epic Games Store
+TBD
