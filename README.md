@@ -15,31 +15,31 @@ Wiki and files relevant to my Steam Deck tinkering, and all things about NOT pla
 
 ### [:computer: Installing Proton Tricks (GUI)](/protontricks.md#user-content-installing-proton-tricks-gui)
 
-### [:penguin: installing Proton Tricks (shell)](/protontricks.md#installing-proton-tricks-shell)
+### [:penguin: installing Proton Tricks (shell)](/protontricks.md#user-content-installing-proton-tricks-shell)
 
-### [:scroll: List detected Steam Games (shell)](/protontricks.md#list-detected-steam-games-shell)
+### [:scroll: List detected Steam Games (shell)](/protontricks.md#user-content-list-detected-steam-games-shell)
 
-### [:mag: Search for an available dependency](/protontricks.md#search-for-an-available-dependency)
+### [:mag: Search for an available dependency](/protontricks.md#user-content-search-for-an-available-dependency)
 
-### [:computer: Install Windows Dependencies](/protontricks.md#install-windows-dependencies)
+### [:computer: Install Windows Dependencies](/protontricks.md#user-content-install-windows-dependencies)
 
-### [:boom: Reset WINE prefix](/protontricks.md#reset-wine-prefix)
+### [:boom: Reset WINE prefix](/protontricks.md#user-content-reset-wine-prefix)
 
 <BR><BR>
 
 ## [ :video_game: Non-Steam Games](/non-steam-games.md)
 
-### [:mag: Find the exe path for non-steam files](/non-steam-games.md#find-the-exe-path-for-non-steam-files)
+### [:mag: Find the exe path for non-steam files](/non-steam-games.md#user-content-find-the-exe-path-for-non-steam-files)
 
-### [:hammer: BoilR (import non-steam shortcuts and cover art)](/non-steam-games.md#boilr-import-cover-art-from-steamgriddb)
+### [:hammer: BoilR (import non-steam shortcuts and cover art)](/non-steam-games.md#user-content-boilr-import-cover-art-from-steamgriddb)
 
-### [:hammer: BoilR (import cover art from SteamGridDB)](/non-steam-games.md#boilr-import-cover-art-from-steamgriddb)
+### [:hammer: BoilR (import cover art from SteamGridDB)](/non-steam-games.md#user-content-boilr-import-cover-art-from-steamgriddb)
 
-### [:video_game: Battle.net](/non-steam-games.md#battlenet)
+### [:video_game: Battle.net](/non-steam-games.md#user-content-battlenet)
 
-### [:video_game: Origin (EA)](/non-steam-games.md#origin-ea)
+### [:video_game: Origin (EA)](/non-steam-games.md#user-content-origin-ea)
 
-### [:video_game: Epic Games Store](/non-steam-games.md#epic-games-store)
+### [:video_game: Epic Games Store](/non-steam-games.md#user-content-epic-games-store)
 
-### [:wrench: Logging](/non-steam-games.md#logging) 
+### [:wrench: Logging](/non-steam-games.md#user-content-logging) 
 
