@@ -5,9 +5,9 @@ Wiki and files relevant to my Steam Deck tinkering, and all things about NOT pla
 
 ## [:penguin: SSH](/ssh.md) (Secure Shell)
 
-### [Setting up SSHD](/ssh.md#user-content-setting-up-sshd) 
+### [:penguin: Setting up SSHD](/ssh.md#user-content-setting-up-sshd) 
 
-### [:lock: Setup Private RSA Keypair and disable password authentication](/ssh.md#setup-private-rsa-keypair-and-disable-password-authentication) EXTRA CREDIT!
+### [:lock: Setup Private RSA Keypair and disable password authentication](/ssh.md#user-content-lock-setup-private-rsa-keypair-and-disable-password-authentication) EXTRA CREDIT!
 
 <BR><BR>
 
