@@ -13,7 +13,7 @@ Wiki and files relevant to my Steam Deck tinkering, and all things about NOT pla
 
 ## [:godmode: Proton Tricks](/protontricks.md) (Install Windows Dependencies and Manage WINE prefixes)
 
-### [:computer: Installing Proton Tricks (GUI)](/protontricks.md#installing-proton-tricks-gui)
+### [:computer: Installing Proton Tricks (GUI)](/protontricks.md#user-content-installing-proton-tricks-gui)
 
 ### [:penguin: installing Proton Tricks (shell)](/protontricks.md#installing-proton-tricks-shell)
 
