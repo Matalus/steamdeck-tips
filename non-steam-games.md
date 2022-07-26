@@ -8,8 +8,6 @@
  #output
  /home/deck/.local/share/Steam/steamapps/compatdata/2738429330/pfx/drive_c/Program Files (x86)/Battle.net/Battle.net Launcher.exe
  ```
-
-
 ### BoilR (import non-steam shortcuts and cover art)
 
 > - install **BoilR** `sudo flatpak install io.github.philipk.boilr`

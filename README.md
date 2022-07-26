@@ -3,168 +3,39 @@ Wiki and files relevant to my Steam Deck tinkering, and all things about NOT pla
 
 **Table of Contents**
 
-## [SSH](/ssh.md)
-> It is highly recommended to setup the SSH service if you plan on doing any serious modding on the deck
+## [SSH](/ssh.md) (Secure Shell)
 
 ### [Setting up SSHD](/ssh.md#setting-up-sshd) 
 
 ### [EXTRA CREDIT! Setup Private RSA Keypair and disable password authentication](/ssh.md#extra-credit-setup-private-rsa-keypair-and-disable-password-authentication)
 
-## [Proton Tricks](/protontricks.md)
-> proton tricks is a utility that helps you tweak and install windows dependencies into your WINE prefixes to satisfy compatibility requirements
+## [Proton Tricks](/protontricks.md) (Install Windows Dependencies and Manage WINE prefixes)
 
-### Installing Proton Tricks (GUI)
+### [Installing Proton Tricks (GUI)](/protontricks.md#installing-proton-tricks-gui)
 
-1. press <kbd>STEAM</kbd> button > **Power** > **Switch to Desktop Mode**
-2. Click on **Application Launcher** > **All Applications** > **Discover**
-3. Use the *Search* box (top left corner) and search for `Protontricks` > click **Install**
-4. Once `Protontricks` is installed, search for `Flatseal` > click **Install**
-5. Click on **Application Launcher** > **All Applications** > **Flatseal**
-6. Once `Flatseal` is loaded, select `Protontricks`
-7. Under **Filesystem** > **Other files**, Add the following paths
+### [installing Proton Tricks (shell)](/protontricks.md#installing-proton-tricks-shell)
 
-- `/home/deck`
-- `/run/media/mmcblk0p1`
+### [List detected Steam Games (shell)](/protontricks.md#list-detected-steam-games-shell)
 
-8. Also check the box for **All user files**
-9. Add a bash alias by running the following command in `Konsole`
-```
-echo "alias protontricks='flatpak run com.github.Matoking.protontricks'" >> ~/.bashrc
-```
+### [Search for an available dependency](/protontricks.md#search-for-an-available-dependency)
 
-### installing Proton Tricks (shell)
+### [Install Windows Dependencies](/protontricks.md#install-windows-dependencies)
 
-> via `ssh` or `Konsole`
->
-> Steps for Penguins
-> - use flatpak to install proton tricks `sudo flatpak install com.github.Matoking.protontricks`
-> - grant filesystem permissions `flatpak override --user --filesystem=/run/media/mmcblk0p1 --filesystem=/home/deck com.github.Matoking.protontricks`
-> - add a bash alias `echo "alias protontricks='flatpak run com.github.Matoking.protontricks'" >> ~/.bashrc`
+### [Reset WINE prefix](/protontricks.md#reset-wine-prefix)
 
-### List detected Steam Games (shell)
+## [Non-Steam Games](/non-steam-games.md)
 
-> via `ssh` or `Konsole`
-> You'll need the Steam `APPID` for the games you wish to use protontricks on
-> Some `non-steam` games may not show in the list if they are installed in the same prefex, such as `Origin`, `Epic Games Store` etc
-1. run the command
-```bash
-protontricks --list
-```
-Sample Output
-```
-#output
-Found the following games:
-Battlevoid: Harbinger (396480)
-EVERSPACE™ 2 (1128920)
-Grim Dawn (219990)
-Horizon Zero Dawn (1151640)
-No Man's Sky (275850)
-Non-Steam shortcut: Battle.net (2738429330)
-Non-Steam shortcut: D2R (2579677180)
-Non-Steam shortcut: Origin (4021751282)
-Non-Steam shortcut: Rebel Galaxy Outlaw (2914290092)
-Non-Steam shortcut: The Outer Worlds (2581508876)
-Path of Exile (238960)
-Rebel Galaxy (290300)
-Red Solstice 2: Survivors (768520)
-Risk of Rain 2 (632360)
-Timberborn (1062090)
-Torchlight III (1030210)
-```
-2. *Or* Search for installed Steam Games
-```bash
-#Format: protontricks -s GAME_NAME
-#example search for "Horizon Zero Dawn"
-protontricks -s Horizon Zero Dawn
+### [Find the exe path for non-steam files](/non-steam-games.md#find-the-exe-path-for-non-steam-files)
 
-#output
-Found the following games:
-Horizon Zero Dawn (1151640)
-```
-3. Note the `APPID`
-> For Example the `APPID` for Horizon Zero Dawn is `1151640`
+### [BoilR (import non-steam shortcuts and cover art)](/non-steam-games.md#boilr-import-cover-art-from-steamgriddb)
 
-### Search for an available dependency
+### [BoilR (import cover art from SteamGridDB)](/non-steam-games.md#boilr-import-cover-art-from-steamgriddb)
 
-```bash
-# search available dependencies and verbs
-# example: search for Visual C++ 2005 Libraries
-protontricks 2914290092 list-all | grep "Visual C++ 2005"
+### [Battle.net](/non-steam-games.md#battlenet)
 
-#output
-vc2005express            MS Visual C++ 2005 Express (Microsoft, 2005) [downloadable]
-vc2005expresssp1         MS Visual C++ 2005 Express SP1 (Microsoft, 2007) [downloadable]
-vc2005trial              MS Visual C++ 2005 Trial (Microsoft, 2005) [downloadable]
-mfc80                    Visual C++ 2005 mfc80 library; part of vcrun2005 (Microsoft, 2011) [downloadable]
-vcrun2005                Visual C++ 2005 libraries (mfc80,msvcp80,msvcr80) (Microsoft, 2011) [downloadable]
-```
+### [Origin (EA)](/non-steam-games.md#origin-ea)
 
-### Install Windows Dependencies
+### [Epic Games Store](/non-steam-games.md#epic-games-store)
 
-```bash
-# Format: protontricks APPID [options] verbs
-# Install the mfc42 dll and set windows 7 compatibility
-protontricks 2914290092 -q --force mfc42 win7
-```
+## [Logging](/non-steam-games.md#logging) 
 
-### Reset WINE prefix
-*When you've really F$%#& it up and nothing is working*
-```bash
-# Format: protontricks APPID annihilate
-protontricks 2914290092 annihilate
-```
-
-## Non-Steam Games
- ### Find the exe path for non-steam files
- ```bash
- # Format: find [dir] -iname [file name (wildcards allowed, case insensitive)]
- # find battle.net launcher EXE path
- find /home/deck/.local/share/ -iname "battle.net*launcher*exe"
-
- #output
- /home/deck/.local/share/Steam/steamapps/compatdata/2738429330/pfx/drive_c/Program Files (x86)/Battle.net/Battle.net Launcher.exe
- ```
-
-
-### BoilR (import non-steam shortcuts and cover art)
-
-> - install **BoilR** `sudo flatpak install io.github.philipk.boilr`
-> - **Application Launcher** > **All Applications** > **BoilR**
-> - **Import Games** (tab) > Click **Import your games into steam** (bottom left)
-
-### BoilR (import cover art from SteamGridDB)
-
-> - (optional) register account on `https://www.steamgriddb.com` 
-> - Create an API Key `https://www.steamgriddb.com/profile/preferences/api`
-> - Copy the `API Key`
-> - Paste it into: **Settings**  > **Authorization key**
-> - **Check* boxes for `Download Images` and `Prefer animated images`
-
-### Battle.net
-
-> - download `Battle.net-setup.exe` using `Chrome` in Desktop Mode
-> - Add a **Non-Steam** game to steam pointed at `/home/deck/Downloads/Battle.net-setup.exe`
-> - Accept Default installation Path and allow install to complete
-
-### Origin (EA)
-
-> - download `OriginThinSetup.exe` using `Chrome` in Desktop Mode
-> - Add a **Non-Steam** game to steam pointed at `/home/deck/Downloads/OriginThinSetup.exe`
-> - Accept Default installation Path and allow install to complete
-
-### Epic Games Store
-
-> Use `Heroic Games Launcher` for Epic and GoG
-> - install HGL `sudo flatpak install com.heroicgameslauncher.hgl`
-> - **Application Launcher** > **All Applications** > **Heroic Games Launcher**
-> - Connect to Epic Games Store with your account
-> - Install games from the **Library** tab
-> - (optional) use `BoilR` to automatically import game shorcuts into **Steam**
-
-## Logging 
-
-> Relevant Logging Directories
-- Steam Proton Logs `~/steam-*` example: `steam-17791636650569236480.log`
-- Proton Crash Logs `/tmp/proton_crashreports`
-- Heroic Games Launcher Logs `/home/deck/.var/app/com.heroicgameslauncher.hgl/config/heroic/GamesConfig`
-- Steam Launcher Logs `/home/deck/.local/share/Steam/logs/`
