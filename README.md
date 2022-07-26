@@ -23,6 +23,8 @@ Wiki and files relevant to my Steam Deck tinkering, and all things about NOT pla
 
 ### [:boom: Reset WINE prefix](/protontricks.md#reset-wine-prefix)
 
+<BR><BR>
+
 ## [ :video_game: Non-Steam Games](/non-steam-games.md)
 
 ### [:mag: Find the exe path for non-steam files](/non-steam-games.md#find-the-exe-path-for-non-steam-files)
@@ -37,5 +39,5 @@ Wiki and files relevant to my Steam Deck tinkering, and all things about NOT pla
 
 ### [:video_game: Epic Games Store](/non-steam-games.md#epic-games-store)
 
-## [:wrench: Logging](/non-steam-games.md#logging) 
+### [:wrench: Logging](/non-steam-games.md#logging) 
 
