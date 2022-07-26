@@ -1,4 +1,4 @@
-## SSH
+# SSH
 > It is highly recommended to setup the SSH service if you plan on doing any serious modding on the deck
 
 ### Setting up SSHD 
