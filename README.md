@@ -1,5 +1,5 @@
 # SteamDeck Tips
-Wiki and files relevant to my Steam Deck tinkering
+Wiki and files relevant to my Steam Deck tinkering, and all things about NOT playing games on your portable gaming PC
 
 ## SSH
 > It is highly recommended to setup the SSH service if you plan on doing any serious modding on the deck
