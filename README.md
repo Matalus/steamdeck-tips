@@ -6,6 +6,8 @@ Wiki and files relevant to my Steam Deck tinkering, and all things about NOT pla
 
 ### Setting up SSHD 
 
+[link](/ssh.md#setting-up-sshd)
+
 > (this will walk through setting a user password and enabling the SSH Daemon Service)
 
 1. push the <kbd>STEAM</kbd> button on the deck
