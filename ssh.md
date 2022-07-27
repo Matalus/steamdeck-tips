@@ -123,3 +123,5 @@ sudo systemctl restart sshd.service
 ssh deck@steamdeck
 ```
 2. If all instructions were followed, you should NOT be prompted for a password
+
+**IF IT STILL DOESN'T WORK ASK AN ADULT**
