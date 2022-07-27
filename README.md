@@ -3,6 +3,14 @@ Wiki and files relevant to my Steam Deck tinkering, and all things about NOT pla
 
 **Table of Contents**
 
+## Useful Websites
+- [protondb.com](https://www.protondb.com/) user reports for game compatibility and configurations
+- [SteamGridDB.com](https://www.steamgriddb.com/) download cover art for your non-steam games
+- [r/SteaamDeck](https://www.reddit.com/r/SteamDeck/) popular reddit sub for all things Steam Deck
+- [ShareDeck.games](https://sharedeck.games/) user reports for optimal settings for games
+
+<BR>
+
 ## [:penguin: SSH](/ssh.md) (Secure Shell)
 
 ### [:penguin: Setting up SSHD](/ssh.md#user-content-setting-up-sshd) 
@@ -40,6 +48,8 @@ Wiki and files relevant to my Steam Deck tinkering, and all things about NOT pla
 ### [:video_game: Origin (EA)](/non-steam-games.md#user-content-origin-ea)
 
 ### [:video_game: Epic Games Store](/non-steam-games.md#user-content-epic-games-store)
+
+### [:wrench: Steam Launch Options](/non-steam-games.md#user-content-steam-launch-options) 
 
 ### [:wrench: Logging](/non-steam-games.md#user-content-logging) 
 

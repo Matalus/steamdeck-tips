@@ -43,6 +43,24 @@
 > - Install games from the **Library** tab
 > - (optional) use `BoilR` to automatically import game shorcuts into **Steam**
 
+### Steam Launch Options
+
+> These are variables that can be specified at runtime, useful for adding non-steam games
+
+**STEAM_COMPAT_DATA_PATH:** specifies the directory where the wine prefix will exist 
+- example: `/home/deck/.local/share/Steam/steamapps/compatdata/4021751282`
+
+**PROTON_LOG:** set to `1` to enable proton logs
+- example: `PROTON_LOG=1`
+
+**DXVK_HUD:** force an fps counter for Vulkan
+- example: `DXVK_HUD= devinfo, fps, frametimes`
+
+**Launch Options Example**
+```
+STEAM_COMPAT_DATA_PATH=/home/deck/.local/share/Steam/steamapps/compatdata/4021751282 PROTON_LOG=1 %command%
+```
+
 ## Logging 
 
 > Relevant Logging Directories
