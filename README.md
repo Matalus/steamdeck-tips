@@ -6,7 +6,7 @@ Wiki and files relevant to my Steam Deck tinkering, and all things about NOT pla
 ## Useful Websites
 - [protondb.com](https://www.protondb.com/) user reports for game compatibility and configurations
 - [SteamGridDB.com](https://www.steamgriddb.com/) download cover art for your non-steam games
-- [r/SteaamDeck](https://www.reddit.com/r/SteamDeck/) popular reddit sub for all things Steam Deck
+- [r/SteamDeck](https://www.reddit.com/r/SteamDeck/) popular reddit sub for all things Steam Deck
 - [ShareDeck.games](https://sharedeck.games/) user reports for optimal settings for games
 
 <BR>
