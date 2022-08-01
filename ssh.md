@@ -60,6 +60,7 @@ sudo systemctl status sshd
 
  3. When prompted enter a secure passphrase
   > Don't recommend leaving this blank, once done you will not need to type a password when you connect via SSH
+  <br><span style='color:red;font-weight:bold'>If you plan on using [SSHFS](https://github.com/winfsp/sshfs-win#unc-syntax) to map drives to your Deck, leave the passphrase blank, SSHFS doesn't support PubKey passphrases</span>
 
 4. Run the following commands to make sure the `ssh-agent` service is running
 ```powershell
@@ -125,3 +126,39 @@ ssh deck@steamdeck
 2. If all instructions were followed, you should NOT be prompted for a password
 
 **IF IT STILL DOESN'T WORK ASK AN ADULT**
+
+<BR><BR>
+
+### Map Network Drives in Windows to your Deck (SSHFS-Win, WinFsp)
+
+> SSHFS-Win: enables Windows to connect via SFTP to an SSH Server
+> WinFsp: Windows File System Proxy; allows support for custom filesystems on windows
+> [github: SSHFS-Win](https://github.com/winfsp/sshfs-win)
+
+**Install SSHFS-Win and WinFsp**
+
+1. From a PowerShell prompt
+```
+winget install WinFsp.WinFsp; winget install SSHFS-Win.SSHFS-Win
+```
+This will install the required packages
+
+**Map Network Drives**
+> NOTE: SSHFS may require specific syntax depending on you connect to SSH
+> `sshfs` by default will connect to your user home directory usually `/home/deck`
+> `sshfs.k` will use your private key to connect
+> `sshfs.r` will allow you connect from the root dir
+> `sshfs.k` and `sshfs.kr` will be needed if you're using `Pubkey` auth
+
+1. Map Drive to your Internal SSD `Steam` directory
+
+```
+net use Z: \\sshfs\deck@steamdeck\.local\share\Steam /PERSISTENT:YES
+```
+2. Map Drive to your MicroSD
+> NOTE: if you didn't let the deck auto-format your SD card, replace `mmcblk0p1` with the name of the volume
+```
+net use Z: \\sshfs.r\deck@steamdeck\run\media\mmcblk0p1 /PERSISTENT:YES
+```
+
+
