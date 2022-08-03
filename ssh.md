@@ -143,6 +143,9 @@ winget install WinFsp.WinFsp; winget install SSHFS-Win.SSHFS-Win
 ```
 This will install the required packages
 
+> NOTE: if you don't have `winget` installed, you can open the `Microsoft Store` and search for **winget** and install it, it may also be called **App Installer**
+> [Microsoft Store: App Installer](https://www.microsoft.com/store/productId/9NBLGGH4NNS1)
+
 **Map Network Drives**
 > NOTE: SSHFS may require specific syntax depending on you connect to SSH
 > `sshfs` by default will connect to your user home directory usually `/home/deck`
