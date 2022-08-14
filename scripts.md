@@ -83,6 +83,39 @@
 
 <img src="/images/script-run-remotescan.jpg" alt="/images/script-run-remotescan.jpg" height="120px">
 
+6. You'll now see an additional `PowerShell` GUI window popup where you can select which games to install
 
+![/images/select-games.jpg](/images/select-games.jpg)
+
+7. Click the games you'd like to install
+
+    > NOTE: you can use <kbd>Ctrl</kbd> + <kbd>Click</kbd> and  <kbd>Shift</kbd> + <kbd>Click</kbd> to select multiple choices
+    > Additionally: you can use the **Filter** field to find specific games
+
+    ![/images/select-filter.jpg](/images/select-filter.jpg)
+    
+    > All Columns can be sorted by clicking them
+
+    ![/images/select-sorted.jpg](/images/select-sorted.jpg)
+
+8. Once you've select the Games you'd like to install on your **SteamDeck**, Click <kbd>OK</kbd>
+9. Select the Remote Steam Library you'd like to install these games on.
+
+    ![/images/select-remotevol.jpg](/images/select-remotevol.jpg)
+
+10. The Games will begin to copy to your Remote Steam Library
+
+    > This process utilizes `Robocopy` an included windows utility for copying files, Robocopy is capable of tranferring large volumes of files very quickly, however actual transfer speed is dependent on factors such as your WLAN tx speed and the maximum write speed of the destination media
+
+    ![/images/copy-games.jpg](/images/copy-games.jpg)
+
+11. Once all games you've selected have been copied to their remote destination a sound will play to let you know the transfer is complete.
+12. You'll now be presented with a summary of games you've installed during your session, as well as you'll be presented with an option to either quit or copy additional games. answer `y` to copy more games, any other response will `quit`
+
+    ![/images/transfer-complete.jpg](/images/transfer-complete.jpg)
+
+13. Now if you restart your deck <kbd>STEAM</kbd> > **Power** > **Restart**, And go to your **Library**
+
+    ![/images/deck-games-installed.jpg](/images/deck-games-installed.jpg)
 
 

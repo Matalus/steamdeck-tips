@@ -37,6 +37,12 @@ Wiki and files relevant to my Steam Deck tinkering, and all things about NOT pla
 
 <BR><BR>
 
+## [ :computer: Scripts](/scripts.md)
+
+## [ :godmode: Install Steam Games from Windows Desktop to SteamDeck (CopyToDeck) ](/scripts.md#user-content-install-steam-games-from-windows-desktop-to-steamdeck-copytodeck)
+
+<BR><BR>
+
 ## [ :video_game: Non-Steam Games](/non-steam-games.md)
 
 ### [:mag: Find the exe path for non-steam files](/non-steam-games.md#user-content-find-the-exe-path-for-non-steam-files)
