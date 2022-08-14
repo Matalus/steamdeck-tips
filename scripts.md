@@ -81,7 +81,7 @@
  - Mapped Drives mounted using `SSHFS-Win` as explained in the **prereqs** section
  - Removeable Media such as `MicroSDXC` cards mounted locally
 
-<img src="/images/script-run-remotescan.jpg" alt="/images/script-run-remotescan.jpg" height="60px">
+<img src="/images/script-run-remotescan.jpg" alt="/images/script-run-remotescan.jpg" height="120px">
 
 
 
