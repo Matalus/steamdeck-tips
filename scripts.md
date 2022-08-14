@@ -42,5 +42,5 @@
     1. Open the `steamdeck-tips\scripts` Directory from the location you downloaded it
     2. Double-Click the `CopyToDeck.cmd` file
 
-[[/images/dbl-click-copytodeckcmd.jpg]]
+![/images/dbl-click-coptodeckcmd.jpg](/images/dbl-click-copytodeckcmd.jpg)
 
