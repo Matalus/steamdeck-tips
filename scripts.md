@@ -3,7 +3,7 @@
 ## Install Steam Games from Windows Desktop to SteamDeck (CopyToDeck)
 
 > This Script will automatically scan your Desktop PC for Steam LIbraries and Detect all Installed Games
-> Then show you which games are not installed on your Steam Deck and allow you to install them via your Home Network or Removeable Media (MicroSDXC Card)
+> Then show you which games are not installed on your Steam Deck and allow you to install them via your Home Network or Removable Media (MicroSDXC Card)
 
 ### Prerequisites
 > There are 2 known methods for directly transferring games to your SteamDeck
@@ -14,7 +14,7 @@
 > - Locally Mounted MicroSDXC Card using something like **Paragon Software: Linux FileSystem for Windows**
 >   - https://www.paragon-software.com/us/home/linuxfs-windows/
 
-### Additonal Prerequisites
+### Additional Prerequisites
 > - **Windows 10**
 > -  **PowerShell 5.1+** Installed in Windows 10 by Default
 
@@ -63,7 +63,7 @@
 
 1. The Script will run and search your local hard drives for `appmanifest*.acf` files
 2. These files will be scanned and used to build an inventory of your installed games
-3. Additonally the Script will scan mapped drives and removeable media to determine what games are installed on them.
+3. Additionally the Script will scan mapped drives and removable media to determine what games are installed on them.
 > - `appmanifest_*.acf` are the files **Steam** uses to determine what Games are installed.
 > - Each Steam Library on your PC will contain potentially multiple of these files in the `steamapps` directory
 > - The default location of these is `c:\program files (x86)\Steam\steamapps`
@@ -79,7 +79,7 @@
 5. Additionally the Script will attempt to scan **Remote Media**
  - This includes:
  - Mapped Drives mounted using `SSHFS-Win` as explained in the **prereqs** section
- - Removeable Media such as `MicroSDXC` cards mounted locally
+ - Removable Media such as `MicroSDXC` cards mounted locally
 
 <img src="/images/script-run-remotescan.jpg" alt="/images/script-run-remotescan.jpg" height="120px">
 
@@ -98,14 +98,14 @@
 
     ![/images/select-sorted.jpg](/images/select-sorted.jpg)
 
-8. Once you've select the Games you'd like to install on your **SteamDeck**, Click <kbd>OK</kbd>
+8. Once you've selected the Games you'd like to install on your **SteamDeck**, Click <kbd>OK</kbd>
 9. Select the Remote Steam Library you'd like to install these games on.
 
     ![/images/select-remotevol.jpg](/images/select-remotevol.jpg)
 
 10. The Games will begin to copy to your Remote Steam Library
 
-    > This process utilizes `Robocopy` an included windows utility for copying files, Robocopy is capable of tranferring large volumes of files very quickly, however actual transfer speed is dependent on factors such as your WLAN tx speed and the maximum write speed of the destination media
+    > This process utilizes `Robocopy` an included windows utility for copying files, Robocopy is capable of transferring large volumes of files very quickly, however actual transfer speed is dependent on factors such as your WLAN tx speed and the maximum write speed of the destination media
 
     ![/images/copy-games.jpg](/images/copy-games.jpg)
 

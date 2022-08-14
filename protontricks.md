@@ -34,7 +34,7 @@ echo "alias protontricks='flatpak run com.github.Matoking.protontricks'" >> ~/.b
 
 > via `ssh` or `Konsole`
 > You'll need the Steam `APPID` for the games you wish to use protontricks on
-> Some `non-steam` games may not show in the list if they are installed in the same prefex, such as `Origin`, `Epic Games Store` etc
+> Some `non-steam` games may not show in the list if they are installed in the same prefix, such as `Origin`, `Epic Games Store` etc
 1. run the command
 ```bash
 protontricks --list

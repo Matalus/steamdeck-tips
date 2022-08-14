@@ -41,7 +41,7 @@
 > - **Application Launcher** > **All Applications** > **Heroic Games Launcher**
 > - Connect to Epic Games Store with your account
 > - Install games from the **Library** tab
-> - (optional) use `BoilR` to automatically import game shorcuts into **Steam**
+> - (optional) use `BoilR` to automatically import game shortcuts into **Steam**
 
 ### Steam Launch Options
 

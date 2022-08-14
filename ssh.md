@@ -10,7 +10,7 @@
 3. Select **Switch to Desktop**
 4.  From Desktop Mode, Click the **Application Launcher** (Steam Deck Icon, bottom left)
 5.  Go to **All Applications** > **Konsole**
-6.  run the following commmand
+6.  run the following command
 ```
 passwd
 ```
@@ -132,7 +132,7 @@ ssh deck@steamdeck
 ### Map Network Drives in Windows to your Deck (SSHFS-Win, WinFsp)
 
 > SSHFS-Win: enables Windows to connect via SFTP to an SSH Server
-> WinFsp: Windows File System Proxy; allows support for custom filesystems on windows
+> WinFsp: Windows File System Proxy; allows support for custom filesystem on windows
 > [github: SSHFS-Win](https://github.com/winfsp/sshfs-win)
 
 **Install SSHFS-Win and WinFsp**
