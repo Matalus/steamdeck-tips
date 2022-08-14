@@ -112,8 +112,8 @@ function Convert-AppManifest ($Manifest, [switch]$Deck) {
         InstallDir  = [regex]::Matches($Content, '\"installdir\"\s+\".*"') | Select-Object -ExpandProperty Value | ForEach-Object { $_ -split '"' } | ForEach-Object { $_.Trim() } | Where-Object { $_ } | Select-Object -Last 1
         LastUpdated = [regex]::Matches($Manifest.Content, '\"LastUpdated\"\s+\"\d+\"') | Select-Object -ExpandProperty Value | ForEach-Object { 
             $_ -split '"' } | ForEach-Object { 
-                $_.Trim() } | Where-Object { 
-                    $_ } | Select-Object -Last 1 | Select-Object @{N="LastUpdated";E={(Get-Date "1/1/1970").AddSeconds($_).ToLocalTime()}} | Select-Object -ExpandProperty LastUpdated
+            $_.Trim() } | Where-Object { 
+            $_ } | Select-Object -Last 1 | Select-Object @{N = "LastUpdated"; E = { (Get-Date "1/1/1970").AddSeconds($_).ToLocalTime() } } | Select-Object -ExpandProperty LastUpdated
         #[system.DateTimeOffset]::FromUnixTimeSeconds(1625346931)
     }
 
@@ -170,10 +170,10 @@ Export-ModuleMember Convert-AppManifest
 function Copy-WithProgress {
     [CmdletBinding()]
     param (
-            [Parameter(Mandatory = $true)]
-            [string] $Source
+        [Parameter(Mandatory = $true)]
+        [string] $Source
         , [Parameter(Mandatory = $true)]
-            [string] $Destination
+        [string] $Destination
         , [int] $Gap = 200
         , [int] $ReportGap = 2000
     )
@@ -227,7 +227,7 @@ function Copy-WithProgress {
         Write-Verbose -Message ('Files copied: {0}' -f $LogContent.Count);
         $Percentage = 0;
         if ($BytesCopied -gt 0) {
-           $Percentage = (($BytesCopied/$BytesTotal)*100)
+            $Percentage = (($BytesCopied / $BytesTotal) * 100)
         }
         Write-Progress -Activity Robocopy -Status ("Copied {0} of {1} files; Copied {2} of {3} bytes" -f $CopiedFileCount, $TotalFileCount, $BytesCopied, $BytesTotal) -PercentComplete $Percentage
     }

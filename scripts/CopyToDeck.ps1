@@ -29,6 +29,7 @@ $RunDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
 $background = "Black"
 if($host.UI.RawUI.BackgroundColor -ne $background){ 
     $host.UI.RawUI.BackgroundColor = $background
+    Clear-Host
 }
 
 Import-Module "$RunDir\functions.psm1" -Force
