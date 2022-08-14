@@ -83,6 +83,7 @@
 
 ![](/images/script-run-remotescan.jpg =120x60)
 
+<img src="/images/script-run-remotescan.jpg">
 
 
 
