@@ -21,18 +21,24 @@
     Requries at least PowerShell 5.1 for some commands
     Requires Run as Administrator for File Searches
 #>
+#region prereqs
 #Requires -Version 5.1 -RunAsAdministrator
 $RunDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
 
 Import-Module "$RunDir\functions.psm1" -Force
+#endregion prereqs
 
+#region GetLocalAppManifests
 # enumerate local drives
 Write-Host -ForegroundColor Green "$(Get-Date -format u) | Getting Local Drives..."
 $DriveCols = @('DeviceID', 'DriveType', 'ProviderName', 'VolumeName', 'FileSystem', @{N = "SizeGB"; E = { [math]::Round($_.Size / 1GB, 2) } }, @{N = "FreeGB"; E = { [math]::Round($_.FreeSpace / 1GB, 2) } })
 [array]$LocalDrives = Get-CimInstance -ClassName Win32_LogicalDisk | Where-Object { $_.DriveType -eq 3 -and $_.FileSystem -eq "ntfs" } | Select-Object $DriveCols
 
+# Gets List of appmanifest*.acf files uses functions.psm1
 $Data = Find-AppManifest -Root $LocalDrives
+#endregion GetLocalAppManifests
 
+#region RequestProtonAPI
 # Get ProtonDB API Data
 $ApiJobParams = @{
     Name         = "ProtonAPI"
@@ -52,7 +58,9 @@ $ApiJobParams = @{
     }
 }
 $null = Start-Job @ApiJobParams
+#endregion RequestProtonAPI
 
+#region GetLocalFileContents
 Write-Host "Found the Following Steam Libraries:"
 $Data.SteamLib | ForEach-Object { Write-Host -ForegroundColor Blue "---> $($_)" }
 
@@ -80,9 +88,11 @@ ForEach ($AppManif in $appManifests) {
 
 # receive App Manifest Data
 $AppManifestsFull = Get-Job -Name "GetAppManif*" | Wait-Job -Timeout 60 -Force | Receive-Job -AutoRemoveJob -Wait
+#endregion GetLocalFileContents
 
+#region BuildLocalAppLib
 # Build App Library
-Write-Host -ForegroundColor Black -BackgroundColor Yellow "$(Get-Date -format u) | Identifying Manifest Contents..."
+Write-Host -ForegroundColor White "$(Get-Date -format u) | Identifying Manifest Contents..."
 $AppLib = @()
 $AppCount = 0
 $ErrCount = 0
@@ -103,13 +113,18 @@ ForEach ($Manifest in $AppManifestsFull) {
 
 Write-Host "Found: $($AppLib.Count) Intact STEAM games"
 write-Host "Errors: $($ErrCount)"
+#endregion BuildLocalAppLib
 
+#region GetRemoteAppManifests
 # Get list of Non Local Volumes
 $RemoteVols = Get-CimInstance Win32_LogicalDisk | Where-Object { $_.DeviceID -notin $LocalDrives.DeviceID } | Select-Object $DriveCols
 
 # Scan all remote vols for steam libraries
 $DeckData = Find-AppManifest -Root $RemoteVols
+#endregion GetRemoteAppManifests
 
+
+#region GetDeckFileContents
 Write-Host -ForegroundColor White "$(Get-Date -format u) | Getting AppManifest File Contents..."
 
 # Create Jobs to get File Contents
@@ -131,9 +146,9 @@ ForEach ($AppManif in $DeckData.AppManifests) {
 
 # receive App Manifest Data
 $DeckDataFull = Get-Job -Name "GetAppManif*" | Wait-Job -Timeout 60 -Force | Receive-Job -AutoRemoveJob -Wait
+#endregion GetDeckFileContents
 
-
-
+#region BuildDeckAppLib
 $DeckApps = @()
 # Loop through and compare to Steam Deck Inventory
 ForEach ($app in $DeckDataFull) {
@@ -144,7 +159,9 @@ ForEach ($app in $DeckDataFull) {
     $AppLib += $App | Select-Object Name, AppID, Location, Library, AppManifest, CommonPath, GB, Status, ProtonDB
     $DeckApps += $App.AppID
 }
+#endregion BuildDeckAppLib
 
+#region ReceiveAPI
 # receive protonDB data
 $null = Get-Job -Name "ProtonAPI" | Receive-Job -OutVariable "ProtonDB" -ErrorVariable "ErrorOutput" -ErrorAction Continue
 $null = Get-Job -Name "ProtonAPI" | Stop-Job -ErrorAction SilentlyContinue -Confirm:$false | Remove-Job -Force -Confirm:$false
@@ -159,8 +176,9 @@ if ($ProtonDB) {
         }
     }
 }
+#endregion ReceiveAPI
 
-
+#region CopyGames
 # automatically runs the 1st set of transfers, user will be prompted to run additional
 # responding with anything that doesn't contain "y" will end the script
 $Installed = @()
@@ -168,21 +186,33 @@ $copymore = "y"
 While ($copymore -like "*y*") {
     # get updated remote vol data each time
     $RemoteVols = Get-CimInstance Win32_LogicalDisk | Where-Object { $_.DeviceID -notin $LocalDrives.DeviceID } | Select-Object $DriveCols
+    
     # Append SteamLib data
     $RemoteVols | ForEach-Object { $_ | Add-Member SteamLibrary(($DeckData.SteamLib -match $_.DeviceID)[0]) -Force }
 
     [array]$SelectApps = $AppLib | Where-Object { $_.AppID -notin $DeckApps } | Out-GridView -PassThru -Title "Select Games to Install on SteamDeck"
 
+    # Selects which Remote Vol to Install Games on
     $DeckLib = $RemoteVols  | Out-GridView -PassThru -Title "Select Destination Steam Library"
 
+    $TransferCount = 0
     # Copy Files to Remote Media
     Write-Host -ForegroundColor Green "$(Get-Date -format u) | Transferring Games to Deck..."
     ForEach ($Game in $SelectApps) {
+        $TransferCount++
+        Write-Host -ForegroundColor Magenta "[ $('{0:00}' -f $TransferCount) / $('{0:00}' -f $SelectApps.Count) ] Game: $($Game.Name) AppID: $($Game.AppID) Size: $($Game.GB)GB"
         Write-Host -ForegroundColor Cyan "---> App Manifest: $($Game.Name) ID: $($Game.AppID)..."
         #$manifargs = "'$(Split-Path -Parent $Game.AppManifest)' '$($DeckLib.SteamLibrary)' '$(Split-Path -Leaf $Game.AppManifest)' /NC"
+        
+        # Copy App Manifest to Destination steamapps
         Copy-Item -Path $Game.AppManifest -Destination $DeckLib.SteamLibrary -Verbose -Force
+        
+        # Copy Common Files to Destination 'Common'
         Write-Host -ForegroundColor Cyan "---> Common Files: $($Game.Name) ID: $($Game.AppID)..."
         $DestCommon = "$($DeckLib.SteamLibrary)\common\$(Split-Path -Leaf $Game.CommonPath)"
+        
+        # if destination directory doesn't exist, create it
+        # NOTE: This occasionally fails, but robocopy MIR usually creates the directory automatically
         if (!(Test-Path $DestCommon)) {
             Write-Host -ForegroundColor Yellow "Creating Directory: $($DestCommon)"
             Try{
@@ -192,10 +222,12 @@ While ($copymore -like "*y*") {
             }
         }
         #$commonArgs = "'$($Game.CommonPath)' '$DestCommon' /MIR /NC /ETA"
+        # Use Copy with Progress Functon to Robocopy with visible progress bar
         Copy-WithProgress -Source $Game.CommonPath -Destination $DestCommon
         $Installed += $Game
     }
 
+    # Show Summary of Games Installed since script was 1st run
     Write-Host -ForegroundColor Green "Games Installed During This Session:"
     $Installed | Format-Table -AutoSize
 
@@ -206,7 +238,9 @@ While ($copymore -like "*y*") {
         $sound.SoundLocation = $soundFile
         $sound.Play()
     }
+    # Prompt for additional installs
     Write-Host -ForegroundColor Green "### All Games Transfers Complete ###"
     $copymore = Read-Host -Prompt "Would you like to transfer more games (y|n)"
 }
+#endregion CopyGames
 

@@ -1,0 +1,52 @@
+
+	  			G:\steamapps\appmanifest_1434950.acf
+	  			G:\steamapps\appmanifest_368230.acf
+
+2022/08/13 12:02:05 ERROR 5 (0x00000005) Scanning Source Directory Z:\lost+found\
+Access is denied.
+Waiting 2 seconds...
+	  			X:\steamapps\appmanifest_1070560.acf
+	  			X:\steamapps\appmanifest_1151640.acf
+	  			X:\steamapps\appmanifest_1391110.acf
+	  			X:\steamapps\appmanifest_1887720.acf
+	  			X:\steamapps\appmanifest_219150.acf
+	  			X:\steamapps\appmanifest_228980.acf
+	  			X:\steamapps\appmanifest_275850.acf
+	  			X:\steamapps\appmanifest_290300.acf
+	  			X:\steamapps\appmanifest_632360.acf
+ Retrying...
+2022/08/13 12:02:07 ERROR 5 (0x00000005) Scanning Source Directory Z:\lost+found\
+Access is denied.
+Waiting 2 seconds... Retrying...
+2022/08/13 12:02:09 ERROR 5 (0x00000005) Scanning Source Directory Z:\lost+found\
+Access is denied.
+
+ERROR: RETRY LIMIT EXCEEDED.
+
+	  			Z:\steamapps\appmanifest_1030210.acf
+	  			Z:\steamapps\appmanifest_1062000.acf
+	  			Z:\steamapps\appmanifest_1062090.acf
+	  			Z:\steamapps\appmanifest_1128920.acf
+	  			Z:\steamapps\appmanifest_1366540.acf
+	  			Z:\steamapps\appmanifest_1509510.acf
+	  			Z:\steamapps\appmanifest_1740210.acf
+	  			Z:\steamapps\appmanifest_1794680.acf
+	  			Z:\steamapps\appmanifest_1944570.acf
+	  			Z:\steamapps\appmanifest_1966900.acf
+	  			Z:\steamapps\appmanifest_2024230.acf
+	  			Z:\steamapps\appmanifest_2083070.acf
+	  			Z:\steamapps\appmanifest_212680.acf
+	  			Z:\steamapps\appmanifest_219990.acf
+	  			Z:\steamapps\appmanifest_238960.acf
+	  			Z:\steamapps\appmanifest_281990.acf
+	  			Z:\steamapps\appmanifest_288370.acf
+	  			Z:\steamapps\appmanifest_294100.acf
+	  			Z:\steamapps\appmanifest_346420.acf
+	  			Z:\steamapps\appmanifest_368230.acf
+	  			Z:\steamapps\appmanifest_396480.acf
+	  			Z:\steamapps\appmanifest_457140.acf
+	  			Z:\steamapps\appmanifest_569480.acf
+	  			Z:\steamapps\appmanifest_710920.acf
+	  			Z:\steamapps\appmanifest_768520.acf
+	  			Z:\steamapps\appmanifest_911430.acf
+	  			Z:\steamapps\appmanifest_979110.acf
