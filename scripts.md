@@ -68,7 +68,20 @@
 > - Each Steam Library on your PC will contain potentially multiple of these files in the `steamapps` directory
 > - The default location of these is `c:\program files (x86)\Steam\steamapps`
 
+<BR>
+
 ![/images/script-run-inventory.jpg](/images/script-run-inventory.jpg)
+
+4. If any games `common` directories are missing or the directory is empty, the Script will flag it and remove it from the selection.
+
+![/images/script-run-inventory.jpg](/images/script-run-filesmissing.jpg)
+
+5. Additionally the Script will attempt to scan **Remote Media**
+ - This includes:
+ - Mapped Drives mounted using `SSHFS-Win` as explained in the **prereqs** section
+ - Removeable Media such as `MicroSDXC` cards mounted locally
+
+![](/images/script-run-remotescan.jpg =120x60)
 
 
 
