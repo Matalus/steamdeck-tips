@@ -25,6 +25,12 @@
 #Requires -Version 5.1 -RunAsAdministrator
 $RunDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
 
+# MAKE IT BLACK # set Host UI Color to Black for Readability
+$background = "Black"
+if($host.UI.RawUI.BackgroundColor -ne $background){ 
+    $host.UI.RawUI.BackgroundColor = $background
+}
+
 Import-Module "$RunDir\functions.psm1" -Force
 #endregion prereqs
 
