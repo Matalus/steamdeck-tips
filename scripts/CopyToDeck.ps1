@@ -103,7 +103,7 @@ ForEach ($Manifest in $AppManifestsFull) {
     $App = Convert-AppManifest -Manifest $Manifest
     if ($App.Status -eq "OK") {
         Write-Host -ForegroundColor Green "[|] Game: $($App.Name) | Size: $($App.GB)GB | Path: $($App.CommonPath)"
-        $AppLib += $App | Select-Object Name, AppID, Location, Library, AppManifest, CommonPath, GB, Status, ProtonDB
+        $AppLib += $App | Select-Object Name, AppID, Location, LastUpdated, Library, AppManifest, CommonPath, GB, Status, ProtonDB
     }
     else {
         $ErrCount++
@@ -156,7 +156,7 @@ ForEach ($app in $DeckDataFull) {
     if ($App.AppID -in $AppLib.AppID) {
         Write-Host -ForegroundColor Yellow "[O] Game: $($App.Name) | App Already Installed on Deck"      
     }
-    $AppLib += $App | Select-Object Name, AppID, Location, Library, AppManifest, CommonPath, GB, Status, ProtonDB
+    $AppLib += $App | Select-Object Name, AppID, Location, LastUpdated, Library, AppManifest, CommonPath, GB, Status, ProtonDB
     $DeckApps += $App.AppID
 }
 #endregion BuildDeckAppLib
@@ -200,7 +200,7 @@ While ($copymore -like "*y*") {
     Write-Host -ForegroundColor Green "$(Get-Date -format u) | Transferring Games to Deck..."
     ForEach ($Game in $SelectApps) {
         $TransferCount++
-        Write-Host -ForegroundColor Magenta "[ $('{0:00}' -f $TransferCount) / $('{0:00}' -f $SelectApps.Count) ] Game: $($Game.Name) AppID: $($Game.AppID) Size: $($Game.GB)GB"
+        Write-Host -ForegroundColor White -BackgroundColor DarkGreen "[ $('{0:00}' -f $TransferCount) / $('{0:00}' -f $SelectApps.Count) ] Game: $($Game.Name) AppID: $($Game.AppID) Size: $($Game.GB)GB"
         Write-Host -ForegroundColor Cyan "---> App Manifest: $($Game.Name) ID: $($Game.AppID)..."
         #$manifargs = "'$(Split-Path -Parent $Game.AppManifest)' '$($DeckLib.SteamLibrary)' '$(Split-Path -Leaf $Game.AppManifest)' /NC"
         
@@ -225,6 +225,8 @@ While ($copymore -like "*y*") {
         # Use Copy with Progress Functon to Robocopy with visible progress bar
         Copy-WithProgress -Source $Game.CommonPath -Destination $DestCommon
         $Installed += $Game
+        # Add to List of AppIDs to exlclude from install list
+        $DeckApps += $Game.AppID
     }
 
     # Show Summary of Games Installed since script was 1st run
