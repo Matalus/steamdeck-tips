@@ -37,10 +37,40 @@
        git pull origin master
        ```
 ### Running the Script
-- **Easy Method:** Double-Click the included Batch File
-> I've included a simple clickable batch file for those that may not be familiar with `PowerShell`
-    1. Open the `steamdeck-tips\scripts` Directory from the location you downloaded it
-    2. Double-Click the `CopyToDeck.cmd` file
+
+<BR>
+
+> - **Easy Method:** Double-Click the included Batch File
+> - I've included a simple clickable batch file for those that may not be familiar with `PowerShell`
+
+1. Open the `steamdeck-tips\scripts` Directory from the location you downloaded it
+2. Double-Click the `CopyToDeck.cmd` file
 
 ![/images/dbl-click-coptodeckcmd.jpg](/images/dbl-click-copytodeckcmd.jpg)
+
+3. Click **Yes** if prompted by `User Account Control`
+
+<BR>
+
+> - **Advanced Method:** `PowerShell` RunAs Administrator
+
+1. Open a `PowerShell` Prompt as Administrator and Run the following command
+
+    ```PowerShell
+    .\scripts\CopyToDeck.ps1
+    ```
+### Using the Script
+
+1. The Script will run and search your local hard drives for `appmanifest*.acf` files
+2. These files will be scanned and used to build an inventory of your installed games
+3. Additonally the Script will scan mapped drives and removeable media to determine what games are installed on them.
+> - `appmanifest_*.acf` are the files **Steam** uses to determine what Games are installed.
+> - Each Steam Library on your PC will contain potentially multiple of these files in the `steamapps` directory
+> - The default location of these is `c:\program files (x86)\Steam\steamapps`
+
+![/images/script-run-inventory.jpg](/images/script-run-inventory.jpg)
+
+
+
+
 
