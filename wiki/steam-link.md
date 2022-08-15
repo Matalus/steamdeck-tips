@@ -10,7 +10,9 @@
 > Setting up Steam Link will Allow you to control your Steam Deck remotely from your PC with a fullsize Keyboard and Mouse
 > This is really useful for tinkering and troubleshooting non-steam games
 
-![/images/steam-link-example.jpg](/images/steam-link-example.jpg|width=100)
+<img src="/images/steam-link-example.jpg" height="100">
+
+<!-- ![/images/steam-link-example.jpg](/images/steam-link-example.jpg|width=100) -->
 
 1. Download **Steam Link** for Windows from https://store.steampowered.com/remoteplay#anywhere_how
 2. Click the **For Windows** link and allow the file to download
