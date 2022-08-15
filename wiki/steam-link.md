@@ -17,7 +17,7 @@
 1. Download **Steam Link** for Windows from https://store.steampowered.com/remoteplay#anywhere_how
 2. Click the **For Windows** link and allow the file to download
 
-![/images/steam-link-for-windows.jpg](/images/steam-link-for-windows.jpg)
+<img src="/images/steam-link-for-windows.jpg" height="500">
 
 3. **Unzip** `SteamLink.zip` into a directory
 4. Open the Directory you unzipped `SteamLink.zip` into
@@ -36,46 +36,45 @@
 
 1. Open **Steam Link** and Click on the **Settings** Gear
 
-![/images/steam-link-for-windows.jpg](/images/steam-link-manual-pair-1.jpg)
-
+<img src="/images/steam-link-for-windows.jpg" height="500">
 2. Goto **Computer**
 
-![/images/steam-link-manual-pair-2.jpg](/images/steam-link-manual-pair-2.jpg)
+<img src="/images/steam-link-manual-pair-2.jpg" height="500">
 
 3. Goto **Other Computer**
 
-![/images/steam-link-manual-pair-3.jpg](/images/steam-link-manual-pair-3.jpg)
+<img src="/images/steam-link-manual-pair-3.jpg" height="500">
 
 4. Note the `PIN` 
 
-![/images/steam-link-manual-pair-4.jpg](/images/steam-link-manual-pair-4.jpg)
+<img src="/images/steam-link-manual-pair-4.jpg" height="500">
 
 5. On your **Steam Deck** Press the <kbd>STEAM</kbd> button
 6. Goto **Settings** > **Remote Play**
 7. Press **Pair Steam Link**
 
-![/images/steamdeck-manual-pair.jpg](/images/steamdeck-manual-pair.jpg)
+<img src="/images/steamdeck-manual-pair.jpg" height="500">
 
 8. Enter the `PIN` from Step 4.
 
-![/images/steamdeck-manual-pair-2.jpg](/images/steamdeck-manual-pair-2.jpg)
+<img src="/images/steamdeck-manual-pair-2.jpg" height="500">
 
 9. After a few seconds **Steam Link** should connect and you'll now see `steamdeck` as a valid computer
 
-![/images/steam-link-manual-pair-5.jpg](/images/steam-link-manual-pair-5.jpg)
+<img src="/images/steam-link-manual-pair-5.jpg" height="500">
 
 10. Exit the **Settings** Gear and you should see a **Green Check** next to `steamdeck`
 11. Select **Start Playing** to Connect your deck
 
-![/images/steam-link-online.jpg](/images/steam-link-online.jpg)
+<img src="/images/steam-link-online.jpg" height="500">
 
 > You can use **Steam Link** to remotely manage your Steam Library, Adjust your Settings...
 
-![/images/steamdeck-manual-pair-2.jpg](/images/steam-link-home.jpg)
+<img src="/images/steamdeck-manual-pair-2.jpg" height="500">
 
 > Or even tinker and work in Desktop Mode
 
-![/images/steamdeck-manual-pair-2.jpg](/images/steam-link-desktop.jpg)
+<img src="/images/steamdeck-manual-pair-2.jpg" height="500">
 
 <!-- ANCHOR BLOCK: needs to be 2 BR above the actual header due to GitHubs frame -->
 <a name="steamlink-windowed-mode-anchor"></a>
