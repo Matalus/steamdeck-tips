@@ -198,8 +198,8 @@ This will install the required packages
 > NOTE: if you don't have `winget` installed, you can open the `Microsoft Store` and search for **winget** and install it, it may also be called **App Installer**
 > [Microsoft Store: App Installer](https://www.microsoft.com/store/productId/9NBLGGH4NNS1)
 
-  ![/images/msstore-install-winget.jpg](/images/msstore-install-winget.jpg|height=80)
 
+<img src="/images/msstore-install-winget.jpg" alt="/images/msstore-install-winget.jpg" height="200px">
 
 **Map Network Drives**
 > NOTE: SSHFS may require specific syntax depending on you connect to SSH
