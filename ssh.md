@@ -1,7 +1,9 @@
 # SSH
 > It is highly recommended to setup the SSH service if you plan on doing any serious modding on the deck
+<BR><BR>
 
-### Setting up SSHD 
+## Setting up SSHD 
+---
 
 > (this will walk through setting a user password and enabling the SSH Daemon Service)
 
@@ -25,7 +27,11 @@ sudo systemctl status sshd
 ```
 10. In the output look for `enabled;` on the **Loaded:** line
 11. Look for **running** on the `Active:` line
-``` example
+
+  ![/images/sshd-status.jpg](/images/sshd-status.jpg)
+
+
+<!-- ``` example
 ● sshd.service - OpenSSH Daemon
     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; vendor preset: disabled)
     Active: active (running) since Sun 2022-07-24 11:13:05 MST; 1 day 11h ago
@@ -35,11 +41,18 @@ sudo systemctl status sshd
         CPU: 112ms
     CGroup: /system.slice/sshd.service
             └─911 "sshd: /usr/bin/sshd -D [listener] 0 of 10-100 startups"
-```
+``` -->
 
 12. If all steps were followed SSH should be enabled, if not *ASK AN ADULT*
 
-### Setup Private RSA Keypair and disable password authentication
+---
+
+<BR><BR>
+
+## Setup Private RSA Keypair and disable password authentication
+---
+<BR>
+
 > This is the most secure way to authenticate
 > This assumes you're connecting from your `Windows 10+` gaming rig with at least `PowerShell 5.1` installed
 
@@ -51,12 +64,17 @@ sudo systemctl status sshd
   > from a powershell prompt
   1. Run the following command
   ```cmd
-  ssh-keygen -t rsa
+  ssh-keygen -t rsa -b 4096
   ```
+  > Generating a Test Key (by default your key will be named `id_rsa`)
+
+  ![/images/ssh-keygen.jpg](/images/ssh-keygen.jpg)
+
+
   2. When prompted to enter a file location leave it blank for purposes of the guide 
 
-  > generated ssh keys will save to `$HOME\.ssh` by default 
-  > typically: `c:\users\<userprofile>\.ssh` 
+    > generated ssh keys will save to `$HOME\.ssh` by default 
+    > typically: `c:\users\<userprofile>\.ssh` 
 
  3. When prompted enter a secure passphrase
   > Don't recommend leaving this blank, once done you will not need to type a password when you connect via SSH
@@ -125,6 +143,8 @@ ssh deck@steamdeck
 ```
 2. If all instructions were followed, you should NOT be prompted for a password
 
+  ![/images/ssh-connect.jpg](/images/ssh-connect.jpg)
+
 **IF IT STILL DOESN'T WORK ASK AN ADULT**
 
 <BR><BR>
@@ -141,6 +161,10 @@ ssh deck@steamdeck
 ```
 winget install WinFsp.WinFsp; winget install SSHFS-Win.SSHFS-Win
 ```
+
+  ![/images/winfsp-sshfs-install.jpg](/images/winfsp-sshfs-install.jpg)
+
+
 This will install the required packages
 
 > NOTE: if you don't have `winget` installed, you can open the `Microsoft Store` and search for **winget** and install it, it may also be called **App Installer**
