@@ -1,5 +1,9 @@
 # Scripts
 
+<!-- ANCHOR BLOCK: needs to be 2 BR above the actual header due to GitHubs frame -->
+<a name="copy-to-deck-anchor"></a>
+<BR><BR>
+
 ## Install Steam Games from Windows Desktop to SteamDeck (CopyToDeck)
 
 > This Script will automatically scan your Desktop PC for Steam LIbraries and Detect all Installed Games

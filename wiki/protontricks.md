@@ -106,6 +106,7 @@ vc2005trial              MS Visual C++ 2005 Trial (Microsoft, 2005) [downloadabl
 mfc80                    Visual C++ 2005 mfc80 library; part of vcrun2005 (Microsoft, 2011) [downloadable]
 vcrun2005                Visual C++ 2005 libraries (mfc80,msvcp80,msvcr80) (Microsoft, 2011) [downloadable]
 ```
+
 <!-- ANCHOR BLOCK: needs to be 2 BR above the actual header due to GitHubs frame -->
 <a name="install-windows-dependencies-anchor"></a>
 <BR><BR>
@@ -121,7 +122,6 @@ protontricks 2914290092 -q --force mfc42 win7
 <!-- ANCHOR BLOCK: needs to be 2 BR above the actual header due to GitHubs frame -->
 <a name="reset-wine-prefix-anchor"></a>
 <BR><BR>
-
 
 ### Reset WINE prefix
 *When you've really F$%#& it up and nothing is working*
