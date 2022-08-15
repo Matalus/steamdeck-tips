@@ -17,7 +17,9 @@ Wiki and files relevant to my Steam Deck tinkering, and all things about NOT pla
 
 ### [:penguin: Setting up SSHD](/wiki/ssh.md#user-content-setting-up-sshd-anchor)
 
-### [:lock: Setup Private RSA Keypair and disable password authentication](/wiki/ssh.md#user-content-setup-private-rsa-keypair-and-disable-password-authentication) EXTRA CREDIT!
+<!-- ### [:lock: Setup Private RSA Keypair and disable password authentication](/wiki/ssh.md#user-content-setup-private-rsa-keypair-and-disable-password-authentication) EXTRA CREDIT! -->
+
+### [:lock: Setup Private RSA Keypair and disable password authentication](/wiki/ssh.md#user-content-setup-pubkey-auth-anchor) EXTRA CREDIT!
 
 ### [:penguin: Map Network Drives in Windows to your Deck (SSHFS-Win, WinFsp)](/wiki/ssh.md#user-content-map-network-drives-in-windows-to-your-deck-sshfs-win-winfsp)
 

@@ -51,6 +51,8 @@ sudo systemctl status sshd
 
 ---
 
+<a name="setup-pubkey-auth-anchor"></a>
+
 <BR><BR>
 
 ## Setup Private RSA Keypair and disable password authentication
