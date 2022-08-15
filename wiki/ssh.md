@@ -1,8 +1,10 @@
 # SSH
+
+<a name="setting-up-sshd-anchor"></a>
+
 > It is highly recommended to setup the SSH service if you plan on doing any serious modding on the deck
 <BR><BR>
 
-<a name="setting-up-sshd-anchor"></a>
 
 ## Setting up SSHD 
 ---
