@@ -47,7 +47,7 @@ Wiki and files relevant to my Steam Deck tinkering, and all things about NOT pla
 
 <BR><BR>
 
-## [:wrench: Steam Link](/wiki/steam-link.md)
+## [:wrench: Steam Link](/wiki/steam-link.md) (Remotely control your Steam Deck from your PC)
 
 ### [ :hammer: Setting up Steam Link](/wiki/steam-link.md#user-content-setting-up-steamlink-anchor)
 
