@@ -21,7 +21,7 @@ passwd
 ```
 sudo systemctl enable sshd
 ```
-9. now run the following command to verify the SSHD is enabled
+9. now run the following command to verify that SSHD is enabled
 ```
 sudo systemctl status sshd
 ```
@@ -60,42 +60,60 @@ sudo systemctl status sshd
   - PowerShell 5.1 or 7.x [guide](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.2)
   - OpenSSH (optional feature) [guide](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse#install-openssh-using-powershell)
 
-  **Create and Install the Keypair (Client: Windows)**
-  > from a powershell prompt
-  1. Run the following command
+  <BR>
+
+**Create and Install the Keypair (Client: Windows)**
+
+> from a powershell prompt
+
+1. Run the following command
+
   ```cmd
-  ssh-keygen -t rsa -b 4096
+  ssh-keygen -t rsa -f $HOME/.ssh/id_rsa
   ```
-  > Generating a Test Key (by default your key will be named `id_rsa`)
+  > **Example:** Generating a Test Key (by default your key will be named `id_rsa`)
 
   ![/images/ssh-keygen.jpg](/images/ssh-keygen.jpg)
 
 
-  2. When prompted to enter a file location leave it blank for purposes of the guide 
+2. When prompted to enter a file location leave it blank for purposes of the guide 
 
-    > generated ssh keys will save to `$HOME\.ssh` by default 
-    > typically: `c:\users\<userprofile>\.ssh` 
+  > generated ssh keys will save to `$HOME\.ssh` by default 
+  > typically: `c:\users\<userprofile>\.ssh` 
 
  3. When prompted enter a secure passphrase
+
   > Don't recommend leaving this blank, once done you will not need to type a password when you connect via SSH
   <br><span style='color:red;font-weight:bold'>If you plan on using [SSHFS](https://github.com/winfsp/sshfs-win#unc-syntax) to map drives to your Deck, leave the passphrase blank, SSHFS doesn't support PubKey passphrases</span>
 
 4. Run the following commands to make sure the `ssh-agent` service is running
+
 ```powershell
-  Set-Service ssh-agent -StartupType Automatic
-  Start-Service ssh-agent -PassThru | Get-Service
+Set-Service ssh-agent -StartupType Automatic
+Start-Service ssh-agent -PassThru | Get-Service
 ```
+
 5. The final output should look like this (otherwise ask an adult)
-```
+
+  ![/images/ssh-agent-start.jpg](/images/ssh-agent-start.jpg)
+
+<!-- ```
 Status   Name               DisplayName
 ------   ----               -----------
 Running  ssh-agent          OpenSSH Authentication Agent
-```
+``` -->
+
 6. Run the following command, you'll need the exact path of the key you generated in step 2
 ```cmd
-ssh-add $HOME\.ssh\id_rsa
+ssh-add $HOME/.ssh/id_rsa
 ```
+
 7. When prompted enter your passphrase for the last time, The key is now installed
+
+> **Example:** Test Key added to `ssh-agent`
+
+  ![/images/ssh-add.jpg](/images/ssh-add.jpg)
+
 8. Run the following command to copy your public key to the steam deck
 
 > DO NOT COPY `$HOME\.ssh\id_rsa` this is your Private Key and remains on your windows machine.
@@ -121,6 +139,11 @@ scp $HOME\.ssh\id_rsa.pub deck@steamdeck:~/.ssh
 ```
 cat ~/.ssh/id_rsa.pub
 ```
+  > WARNING: <span style='color:red;font-weight:bold'>Don't share actual SSH keys you use for authentication on the internet</span>
+
+  ![/images/test-pubkey.jpg](/images/test-pubkey.jpg)
+
+
 2. assuming the key is present run the following to create the `authorized_keys` file
 ```
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
@@ -135,6 +158,11 @@ testvar=`grep ^PasswordAuthentication /etc/ssh/sshd_config`
 
 sudo systemctl restart sshd.service
 ```
+> Additionally: This file can also be edited using `nano` or `vim` (if you're a masochist)
+
+  ![/images/nano-edit.jpg](/images/nano-edit.jpg)
+
+
 **Test Login (Client: Windows)**
 1. From your Windows PC login to the deck via SSH
 
@@ -170,6 +198,9 @@ This will install the required packages
 > NOTE: if you don't have `winget` installed, you can open the `Microsoft Store` and search for **winget** and install it, it may also be called **App Installer**
 > [Microsoft Store: App Installer](https://www.microsoft.com/store/productId/9NBLGGH4NNS1)
 
+  ![/images/msstore-install-winget.jpg](/images/msstore-install-winget.jpg|height=80)
+
+
 **Map Network Drives**
 > NOTE: SSHFS may require specific syntax depending on you connect to SSH
 > `sshfs` by default will connect to your user home directory usually `/home/deck`
@@ -180,12 +211,19 @@ This will install the required packages
 1. Map Drive to your Internal SSD `Steam` directory
 
 ```
-net use Z: \\sshfs\deck@steamdeck\.local\share\Steam /PERSISTENT:YES
+net use Z: \\sshfs\deck@steamdeck\.local\share\Steam /persistent:yes /savecred
 ```
+
 2. Map Drive to your MicroSD
+
 > NOTE: if you didn't let the deck auto-format your SD card, replace `mmcblk0p1` with the name of the volume
+
 ```
-net use Z: \\sshfs.r\deck@steamdeck\run\media\mmcblk0p1 /PERSISTENT:YES
+net use Z: \\sshfs.r\deck@steamdeck\run\media\mmcblk0p1 /persistent:yes /savecred
 ```
+
+  > These Drives should now be persistent and reconnect at login
+
+  ![/images/mapped-drives.jpg](/images/mapped-drives.jpg)
 
 
