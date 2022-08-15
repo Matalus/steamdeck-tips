@@ -43,7 +43,18 @@ Wiki and files relevant to my Steam Deck tinkering, and all things about NOT pla
 
 ## [ :computer: Scripts](/wiki/scripts.md)
 
-## [ :godmode: Install Steam Games from Windows Desktop to SteamDeck (CopyToDeck) ](/wiki/scripts.md#user-content-copy-to-deck-anchor)
+### [ :godmode: Install Steam Games from Windows Desktop to SteamDeck (CopyToDeck) ](/wiki/scripts.md#user-content-copy-to-deck-anchor)
+
+<BR><BR>
+
+## [:wrench: Steam Link](/wiki/steam-link.md)
+
+### [ :hammer: Setting up Steam Link](/wiki/steam-link.md#user-content-setting-up-steamlink-anchor)
+
+### [ :hammer: Steam Link Pairing](/wiki/steam-link.md#user-content-steamlink-pairing-anchor)
+
+### [ :hammer: Use Steam Link in Windowed Mode](/wiki/steam-link.md#user-content-steamlink-windowed-mode-anchor)
+
 
 <BR><BR>
 

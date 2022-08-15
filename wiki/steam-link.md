@@ -25,7 +25,7 @@
 6. Follow the On-Screen prompts and click **Next** as prompted, you may have to click **Yes** on a UAC Prompt
 
 <!-- ANCHOR BLOCK: needs to be 2 BR above the actual header due to GitHubs frame -->
-<a name="steamlink-pairing"></a>
+<a name="steamlink-pairing-anchor"></a>
 <BR><BR>
 
 ## Steam Link Pairing
@@ -86,6 +86,21 @@
 
 > By default Steam Link opens in FullScreen mode, which is useful if you're playing games remotely, but if you're just wanting to manage your device remotely you might want to just launch this in a window
 
+1. On your Windows PC
+2. Open the Folder `C:\Program Files (x86)\Steam Link`
+3. <kbd>Right Click</kbd> on `SteamLink.exe`
+4. Go to **Send To** > **Desktop (Create Shortcut)**
+
+<img src="/images/steam-link-create-shortcut.jpg" height="350">
+
+5. Go to your **Desktop** and <kbd>Right Click</kbd> on the newly created Shortcut
+6. Go to **Properties** and Paste the string below into the **Target** Field, Replacing the current contents
+
 ```
 "C:\Program Files (x86)\Steam Link\SteamLink.exe" --windowed
 ```
+
+<img src="/images/steam-link-edit-shortcut.jpg" height="350">
+
+7. Click <kbd>Apply</kdb>
+8. Now when you <kbd>Double-Click</kdb> this Shortcut, **Steam Link** should launch in Windowed Mode
