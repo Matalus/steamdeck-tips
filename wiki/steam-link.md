@@ -10,7 +10,7 @@
 > Setting up Steam Link will Allow you to control your Steam Deck remotely from your PC with a fullsize Keyboard and Mouse
 > This is really useful for tinkering and troubleshooting non-steam games
 
-<img src="/images/steam-link-example.jpg" height="100">
+<img src="/images/steam-link-example.jpg" height="40%x">
 
 <!-- ![/images/steam-link-example.jpg](/images/steam-link-example.jpg|width=100) -->
 
