@@ -122,7 +122,27 @@ Write-Host "Found: $($AppLib.Count) Intact STEAM games"
 write-Host "Errors: $($ErrCount)"
 #endregion BuildLocalAppLib
 
+
 #region GetRemoteAppManifests
+# Check for Disconnect Mapped Drives with 'steam' in the path
+$Steam_Network = Get-ChildItem HKCU:\Network\ -ErrorAction SilentlyContinue | Get-ItemProperty | Where-Object {$_.RemotePath -like "*steam*"}
+if($Steam_Network){
+    $Steam_Active = Get-CimInstance Win32_MappedLogicalDisk -ErrorAction SilentlyContinue | Where-Object {$_.ProviderName -like "*steam*"} 
+    if(!$Steam_Active){
+        Write-Host -ForegroundColor Yellow "Attempting to Reconnect Disconnected Network Drives"
+        ForEach($Drive in $Steam_Network){
+            Write-Host "Connecting to: $($Drive.PSChildName) : $($Drive.RemotePath)" -NoNewline
+            $null = Invoke-Expression "net use '$($Drive.PSChildName):' '$($Drive.RemotePath)' /persistent:yes /savecred"
+            $Steam_Active = Get-CimInstance Win32_MappedLogicalDisk -ErrorAction SilentlyContinue | Where-Object {$_.ProviderName -like "*steam*"} 
+            if($Steam_Active){
+                Write-Host -ForegroundColor Green " Success!"
+            }else{
+                Write-Warning "`n WARNING: Mapped Drive $($Drive.PSChildName) $($Drive.RemotePath) Failed to Reconnect, Please Confirm that your SteamDeck is powered on and SSH is enabled."
+            }
+        }
+    }
+}
+
 # Get list of Non Local Volumes
 $RemoteVols = Get-CimInstance Win32_LogicalDisk | Where-Object { $_.DeviceID -notin $LocalDrives.DeviceID } | Select-Object $DriveCols
 
@@ -201,7 +221,10 @@ While ($copymore -like "*y*") {
 
     # Selects which Remote Vol to Install Games on
     $DeckLib = $RemoteVols  | Out-GridView -PassThru -Title "Select Destination Steam Library"
-
+    if($null -eq $DeckLib){
+        Write-Host -ForegroundColor Yellow "No Destination Library Selected: Quitting..."
+        Exit
+    }
     $TransferCount = 0
     # Copy Files to Remote Media
     Write-Host -ForegroundColor Green "$(Get-Date -format u) | Transferring Games to Deck..."
