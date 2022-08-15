@@ -181,9 +181,12 @@ ssh deck@steamdeck
 
 **IF IT STILL DOESN'T WORK ASK AN ADULT**
 
+<a name="map-network-drive-anchor"></a>
+
 <BR><BR>
 
-### Map Network Drives in Windows to your Deck (SSHFS-Win, WinFsp)
+## Map Network Drives in Windows to your Deck (SSHFS-Win, WinFsp)
+---
 
 > SSHFS-Win: enables Windows to connect via SFTP to an SSH Server
 > WinFsp: Windows File System Proxy; allows support for custom filesystem on windows
