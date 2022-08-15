@@ -9,8 +9,8 @@
 > There are 2 known methods for directly transferring games to your SteamDeck
 > - Windows Mapped Drives using WinFSP and SSHFS-Win 
 >   - see my guides (below) (This Assumes you've also setup SSH on your SteamDeck)
->   - [Setting up SSHD](https://github.com/Matalus/steamdeck-tips/blob/main/ssh.md#setting-up-sshd)
->   - [Map Network Drives in Windows to your Deck (SSHFS-Win, WinFsp)](https://github.com/Matalus/steamdeck-tips/blob/main/ssh.md#user-content-map-network-drives-in-windows-to-your-deck-sshfs-win-winfsp)
+>   - [Setting up SSHD](https://github.com/Matalus/steamdeck-tips/blob/main/wiki/ssh.md#setting-up-sshd)
+>   - [Map Network Drives in Windows to your Deck (SSHFS-Win, WinFsp)](https://github.com/Matalus/steamdeck-tips/blob/main/wiki/ssh.md#user-content-map-network-drives-in-windows-to-your-deck-sshfs-win-winfsp)
 > - Locally Mounted MicroSDXC Card using something like **Paragon Software: Linux FileSystem for Windows**
 >   - https://www.paragon-software.com/us/home/linuxfs-windows/
 
