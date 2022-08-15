@@ -39,9 +39,9 @@ echo "alias protontricks='flatpak run com.github.Matoking.protontricks'" >> ~/.b
 > - grant filesystem permissions `flatpak override --user --filesystem=/run/media/mmcblk0p1 --filesystem=/home/deck com.github.Matoking.protontricks`
 > - add a bash alias `echo "alias protontricks='flatpak run com.github.Matoking.protontricks'" >> ~/.bashrc`
 
-<BR><BR>
-
+<!-- ANCHOR BLOCK: needs to be 2 BR above the actual header due to GitHubs frame -->
 <a name="list-detected-steam-games-anchor"></a>
+<BR><BR>
 
 ## List detected Steam Games (shell)
 ---
@@ -87,9 +87,9 @@ Horizon Zero Dawn (1151640)
 3. Note the `APPID`
 > For Example the `APPID` for Horizon Zero Dawn is `1151640`
 
-<BR><BR>
-
+<!-- ANCHOR BLOCK: needs to be 2 BR above the actual header due to GitHubs frame -->
 <a name="search-for-dependency-anchor"></a>
+<BR><BR>
 
 ## Search for an available dependency
 ---
@@ -106,9 +106,9 @@ vc2005trial              MS Visual C++ 2005 Trial (Microsoft, 2005) [downloadabl
 mfc80                    Visual C++ 2005 mfc80 library; part of vcrun2005 (Microsoft, 2011) [downloadable]
 vcrun2005                Visual C++ 2005 libraries (mfc80,msvcp80,msvcr80) (Microsoft, 2011) [downloadable]
 ```
-<BR><BR>
-
+<!-- ANCHOR BLOCK: needs to be 2 BR above the actual header due to GitHubs frame -->
 <a name="install-windows-dependencies-anchor"></a>
+<BR><BR>
 
 ## Install Windows Dependencies
 ---
@@ -118,9 +118,10 @@ vcrun2005                Visual C++ 2005 libraries (mfc80,msvcp80,msvcr80) (Micr
 # Install the mfc42 dll and set windows 7 compatibility
 protontricks 2914290092 -q --force mfc42 win7
 ```
+<!-- ANCHOR BLOCK: needs to be 2 BR above the actual header due to GitHubs frame -->
+<a name="reset-wine-prefix-anchor"></a>
 <BR><BR>
 
-<a name="reset-wine-prefix-anchor"></a>
 
 ### Reset WINE prefix
 *When you've really F$%#& it up and nothing is working*
