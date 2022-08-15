@@ -45,6 +45,9 @@ Wiki and files relevant to my Steam Deck tinkering, and all things about NOT pla
 
 ### [ :godmode: Install Steam Games from Windows Desktop to SteamDeck (CopyToDeck) ](/wiki/scripts.md#user-content-copy-to-deck-anchor)
 
+### [ :book: List All Steam Games (GetSteamGames) ](/wiki/scripts.md#user-content-get-steam-games-anchor)
+
+
 <BR><BR>
 
 ## [:wrench: Steam Link](/wiki/steam-link.md) (Remotely control your Steam Deck from your PC)

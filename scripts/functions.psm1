@@ -97,11 +97,29 @@ function Convert-AppManifest ($Manifest, [switch]$Deck) {
         $ManifestPath = $Manifest
     }
 
+    # Auto-Detect Location
+    #Get All Drives
+    $DriveCols = @('DeviceID', 'DriveType', 'MediaType', 'ProviderName', 'VolumeName', 'FileSystem', @{N = "SizeGB"; E = { [math]::Round($_.Size / 1GB, 2) } }, @{N = "FreeGB"; E = { [math]::Round($_.FreeSpace / 1GB, 2) } })
+    [array]$AllDrives = Get-CimInstance -ClassName Win32_LogicalDisk | Select-Object $DriveCols
+
+    ForEach ($Drive in $AllDrives) {
+
+        $DriveLocation = switch ($Drive) {
+            { $_.FileSystem -eq 'ext4' -and $_.DriveType -eq 3 -and $_.MediaType -eq 12 } { "Local MicroSDXC" }
+            { $_.FileSystem -eq 'FUSE-SSHFS' -and $_.DriveType -eq 4 -and $_.MediaType -eq 0 -and $_.ProviderName -match 'SSHFS[.]{0,1}[kK]{0,1}r' } { "SteamDeck MicroSDXC" }
+            { $_.FileSystem -eq 'FUSE-SSHFS' -and $_.DriveType -eq 4 -and $_.MediaType -eq 0 -and $_.ProviderName -match 'SSHFS[.]{0,1}[kK]{0,1}\\' } { "SteamDeck SSD" }
+            { $_.FileSystem -eq 'NTFS' -and $_.DriveType -eq 3 -and $_.MediaType -eq 12 } { "$($env:COMPUTERNAME)" }
+            Default { "Unknown" }
+        }
+        $Drive | Add-Member Description($DriveLocation) -Force
+    }
+    
+
     if ($Deck) {
         $Location = "SteamDeck"
     }
     else {
-        $Location = $env:COMPUTERNAME
+        $Location = $AllDrives | Where-Object {$_.DeviceID -eq ($ManifestPath -split "\\" | Select-Object -First 1)} | Select-Object -ExpandProperty Description
     }
 
     $App = [pscustomobject]@{

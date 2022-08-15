@@ -123,3 +123,19 @@
     ![/images/deck-games-installed.jpg](/images/deck-games-installed.jpg)
 
 
+<!-- ANCHOR BLOCK: needs to be 2 BR above the actual header due to GitHubs frame -->
+<a name="get-steam-games-anchor"></a>
+<BR><BR>
+
+## List All Steam Games (GetSteamGames)
+
+WIP
+
+1. Open a `PowerShell` Prompt as Administrator and Run the following command
+
+    ```PowerShell
+    .\scripts\GetSteamGames.ps1
+    ```
+
+<img src="/images/steam-inventory.jpg" height="350">
+

@@ -118,7 +118,7 @@ ForEach ($Manifest in $AppManifestsFull) {
     }
 }
 
-Write-Host "Found: $($AppLib.Count) Intact STEAM games"
+Write-Host "Found: $($AppLib.Count) STEAM games"
 write-Host "Errors: $($ErrCount)"
 #endregion BuildLocalAppLib
 
