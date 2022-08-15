@@ -43,7 +43,7 @@ Wiki and files relevant to my Steam Deck tinkering, and all things about NOT pla
 
 ## [ :computer: Scripts](/wiki/scripts.md)
 
-## [ :godmode: Install Steam Games from Windows Desktop to SteamDeck (CopyToDeck) ](/wiki/scripts.md#user-content-install-steam-games-from-windows-desktop-to-steamdeck-copytodeck)
+## [ :godmode: Install Steam Games from Windows Desktop to SteamDeck (CopyToDeck) ](/wiki/scripts.md#user-content-copy-to-deck-anchor)
 
 <BR><BR>
 
