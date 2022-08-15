@@ -25,9 +25,9 @@
 ```
 echo "alias protontricks='flatpak run com.github.Matoking.protontricks'" >> ~/.bashrc
 ```
-<BR><BR>
-
 <a name="installing-proton-tricks-shell-anchor"></a>
+
+<BR><BR>
 
 ## installing Proton Tricks (shell)
 ---
