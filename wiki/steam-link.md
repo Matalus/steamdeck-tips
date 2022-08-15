@@ -102,5 +102,5 @@
 
 <img src="/images/steam-link-edit-shortcut.jpg" height="350">
 
-7. Click <kbd>Apply</kdb>
+7. Click <kbd>Apply</kdb> Then <kbd>OK</kdb>
 8. Now when you <kbd>Double-Click</kdb> this Shortcut, **Steam Link** should launch in Windowed Mode
