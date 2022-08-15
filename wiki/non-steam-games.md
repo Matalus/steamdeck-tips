@@ -1,5 +1,12 @@
 # Non-Steam Games
- ### Find the exe path for non-steam files
+
+<!-- ANCHOR BLOCK: needs to be 2 BR above the actual header due to GitHubs frame -->
+<a name="find-exe-anchor"></a>
+<BR><BR>
+
+ ## Find the exe path for non-steam files
+ ---
+
  ```bash
  # Format: find [dir] -iname [file name (wildcards allowed, case insensitive)]
  # find battle.net launcher EXE path
@@ -8,13 +15,23 @@
  #output
  /home/deck/.local/share/Steam/steamapps/compatdata/2738429330/pfx/drive_c/Program Files (x86)/Battle.net/Battle.net Launcher.exe
  ```
-### BoilR (import non-steam shortcuts and cover art)
+<!-- ANCHOR BLOCK: needs to be 2 BR above the actual header due to GitHubs frame -->
+<a name="boilr-install-anchor"></a>
+<BR><BR>
+
+## BoilR (import non-steam shortcuts and cover art)
+---
 
 > - install **BoilR** `sudo flatpak install io.github.philipk.boilr`
 > - **Application Launcher** > **All Applications** > **BoilR**
 > - **Import Games** (tab) > Click **Import your games into steam** (bottom left)
 
-### BoilR (import cover art from SteamGridDB)
+<!-- ANCHOR BLOCK: needs to be 2 BR above the actual header due to GitHubs frame -->
+<a name="boilr-steamgriddb-anchor"></a>
+<BR><BR>
+
+## BoilR (import cover art from SteamGridDB)
+---
 
 > - (optional) register account on `https://www.steamgriddb.com` 
 > - Create an API Key `https://www.steamgriddb.com/profile/preferences/api`
@@ -22,19 +39,34 @@
 > - Paste it into: **Settings**  > **Authorization key**
 > - **Check* boxes for `Download Images` and `Prefer animated images`
 
+<!-- ANCHOR BLOCK: needs to be 2 BR above the actual header due to GitHubs frame -->
+<a name="battlenet-anchor"></a>
+<BR><BR>
+
 ### Battle.net
+---
 
 > - download `Battle.net-setup.exe` using `Chrome` in Desktop Mode
 > - Add a **Non-Steam** game to steam pointed at `/home/deck/Downloads/Battle.net-setup.exe`
 > - Accept Default installation Path and allow install to complete
 
+<!-- ANCHOR BLOCK: needs to be 2 BR above the actual header due to GitHubs frame -->
+<a name="origin-anchor"></a>
+<BR><BR>
+
 ### Origin (EA)
+---
 
 > - download `OriginThinSetup.exe` using `Chrome` in Desktop Mode
 > - Add a **Non-Steam** game to steam pointed at `/home/deck/Downloads/OriginThinSetup.exe`
 > - Accept Default installation Path and allow install to complete
 
+<!-- ANCHOR BLOCK: needs to be 2 BR above the actual header due to GitHubs frame -->
+<a name="epic-games-anchor"></a>
+<BR><BR>
+
 ### Epic Games Store
+---
 
 > Use `Heroic Games Launcher` for Epic and GoG
 > - install HGL `sudo flatpak install com.heroicgameslauncher.hgl`
@@ -43,7 +75,12 @@
 > - Install games from the **Library** tab
 > - (optional) use `BoilR` to automatically import game shortcuts into **Steam**
 
+<!-- ANCHOR BLOCK: needs to be 2 BR above the actual header due to GitHubs frame -->
+<a name="steam-launch-options-anchor"></a>
+<BR><BR>
+
 ### Steam Launch Options
+---
 
 > These are variables that can be specified at runtime, useful for adding non-steam games
 
@@ -60,8 +97,12 @@
 ```
 STEAM_COMPAT_DATA_PATH=/home/deck/.local/share/Steam/steamapps/compatdata/4021751282 PROTON_LOG=1 %command%
 ```
+<!-- ANCHOR BLOCK: needs to be 2 BR above the actual header due to GitHubs frame -->
+<a name="logging-anchor"></a>
+<BR><BR>
 
-## Logging 
+## Logging
+---
 
 > Relevant Logging Directories
 - Steam Proton Logs `~/steam-*` example: `steam-17791636650569236480.log`

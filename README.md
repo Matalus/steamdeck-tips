@@ -49,19 +49,19 @@ Wiki and files relevant to my Steam Deck tinkering, and all things about NOT pla
 
 ## [ :video_game: Non-Steam Games](/wiki/non-steam-games.md)
 
-### [:mag: Find the exe path for non-steam files](/wiki/non-steam-games.md#user-content-find-the-exe-path-for-non-steam-files)
+### [:mag: Find the exe path for non-steam files](/wiki/non-steam-games.md#user-content-find-exe-anchor)
 
-### [:hammer: BoilR (import non-steam shortcuts and cover art)](/wiki/non-steam-games.md#user-content-boilr-import-cover-art-from-steamgriddb)
+### [:hammer: BoilR (import non-steam shortcuts and cover art)](/wiki/non-steam-games.md#user-content-boilr-install-anchor)
 
-### [:hammer: BoilR (import cover art from SteamGridDB)](/wiki/non-steam-games.md#user-content-boilr-import-cover-art-from-steamgriddb)
+### [:hammer: BoilR (import cover art from SteamGridDB)](/wiki/non-steam-games.md#user-content-boilr-steamgriddb-anchor)
 
-### [:video_game: Battle.net](/wiki/non-steam-games.md#user-content-battlenet)
+### [:video_game: Battle.net](/wiki/non-steam-games.md#user-content-battlenet-anchor)
 
-### [:video_game: Origin (EA)](/wiki/non-steam-games.md#user-content-origin-ea)
+### [:video_game: Origin (EA)](/wiki/non-steam-games.md#user-content-origin-anchor)
 
-### [:video_game: Epic Games Store](/wiki/non-steam-games.md#user-content-epic-games-store)
+### [:video_game: Epic Games Store](/wiki/non-steam-games.md#user-content-epic-games-anchor)
 
-### [:wrench: Steam Launch Options](/wiki/non-steam-games.md#user-content-steam-launch-options) 
+### [:wrench: Steam Launch Options](/wiki/non-steam-games.md#user-content-steam-launch-options-anchor) 
 
-### [:wrench: Logging](/wiki/non-steam-games.md#user-content-logging) 
+### [:wrench: Logging](/wiki/non-steam-games.md#user-content-logging-anchor) 
 
