@@ -71,11 +71,11 @@
 
 > You can use **Steam Link** to remotely manage your Steam Library, Adjust your Settings...
 
-<img src="/images/steamdeck-manual-pair-2.jpg" height="350">
+<img src="/images/steam-link-home.jpg" height="350">
 
 > Or even tinker and work in Desktop Mode
 
-<img src="/images/steamdeck-manual-pair-2.jpg" height="350">
+<img src="/images/steam-link-desktop.jpg" height="350">
 
 <!-- ANCHOR BLOCK: needs to be 2 BR above the actual header due to GitHubs frame -->
 <a name="steamlink-windowed-mode-anchor"></a>
