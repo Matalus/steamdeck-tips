@@ -36,7 +36,7 @@
 
 1. Open **Steam Link** and Click on the **Settings** Gear
 
-<img src="/images/steam-link-for-windows.jpg" height="500">
+<img src="/images/steam-link-manual-pair-1.jpg" height="500">
 2. Goto **Computer**
 
 <img src="/images/steam-link-manual-pair-2.jpg" height="500">
