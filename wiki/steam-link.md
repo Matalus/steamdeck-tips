@@ -89,12 +89,18 @@
 1. On your Windows PC
 2. Open the Folder `C:\Program Files (x86)\Steam Link`
 3. <kbd>Right Click</kbd> on `SteamLink.exe`
+<<<<<<< Updated upstream
 4. Go to **Send To** > **Desktop (Create Shortcut)**
 
 <img src="/images/steam-link-create-shortcut.jpg" height="350">
 
 5. Go to your **Desktop** and <kbd>Right Click</kbd> on the newly created Shortcut
 6. Go to **Properties** and Paste the string below into the **Target** Field, Replacing the current contents
+=======
+4. Go to **Send To** > **
+
+<img src>
+>>>>>>> Stashed changes
 
 ```
 "C:\Program Files (x86)\Steam Link\SteamLink.exe" --windowed
