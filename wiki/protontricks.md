@@ -1,8 +1,13 @@
 # Proton Tricks
 
+<a name="installing-proton-tricks-gui-anchor"></a>
+
 > proton tricks is a utility that helps you tweak and install windows dependencies into your WINE prefixes to satisfy compatibility requirements
 
-### Installing Proton Tricks (GUI)
+<BR>
+
+## Installing Proton Tricks (GUI)
+---
 
 1. press <kbd>STEAM</kbd> button > **Power** > **Switch to Desktop Mode**
 2. Click on **Application Launcher** > **All Applications** > **Discover**
@@ -20,8 +25,12 @@
 ```
 echo "alias protontricks='flatpak run com.github.Matoking.protontricks'" >> ~/.bashrc
 ```
+<BR><BR>
 
-### installing Proton Tricks (shell)
+<a name="installing-proton-tricks-shell-anchor"></a>
+
+## installing Proton Tricks (shell)
+---
 
 > via `ssh` or `Konsole`
 >
@@ -30,7 +39,12 @@ echo "alias protontricks='flatpak run com.github.Matoking.protontricks'" >> ~/.b
 > - grant filesystem permissions `flatpak override --user --filesystem=/run/media/mmcblk0p1 --filesystem=/home/deck com.github.Matoking.protontricks`
 > - add a bash alias `echo "alias protontricks='flatpak run com.github.Matoking.protontricks'" >> ~/.bashrc`
 
-### List detected Steam Games (shell)
+<BR><BR>
+
+<a name="list-detected-steam-games-anchor"></a>
+
+## List detected Steam Games (shell)
+---
 
 > via `ssh` or `Konsole`
 > You'll need the Steam `APPID` for the games you wish to use protontricks on
@@ -73,7 +87,12 @@ Horizon Zero Dawn (1151640)
 3. Note the `APPID`
 > For Example the `APPID` for Horizon Zero Dawn is `1151640`
 
-### Search for an available dependency
+<BR><BR>
+
+<a name="search-for-dependency-anchor"></a>
+
+## Search for an available dependency
+---
 
 ```bash
 # search available dependencies and verbs
@@ -87,14 +106,21 @@ vc2005trial              MS Visual C++ 2005 Trial (Microsoft, 2005) [downloadabl
 mfc80                    Visual C++ 2005 mfc80 library; part of vcrun2005 (Microsoft, 2011) [downloadable]
 vcrun2005                Visual C++ 2005 libraries (mfc80,msvcp80,msvcr80) (Microsoft, 2011) [downloadable]
 ```
+<BR><BR>
 
-### Install Windows Dependencies
+<a name="install-windows-dependencies-anchor"></a>
+
+## Install Windows Dependencies
+---
 
 ```bash
 # Format: protontricks APPID [options] verbs
 # Install the mfc42 dll and set windows 7 compatibility
 protontricks 2914290092 -q --force mfc42 win7
 ```
+<BR><BR>
+
+<a name="reset-wine-prefix-anchor"></a>
 
 ### Reset WINE prefix
 *When you've really F$%#& it up and nothing is working*

@@ -27,17 +27,17 @@ Wiki and files relevant to my Steam Deck tinkering, and all things about NOT pla
 
 ## [:godmode: Proton Tricks](/wiki/protontricks.md) (Install Windows Dependencies and Manage WINE prefixes)
 
-### [:computer: Installing Proton Tricks (GUI)](/wiki/protontricks.md#user-content-installing-proton-tricks-gui)
+### [:computer: Installing Proton Tricks (GUI)](/wiki/protontricks.md#user-content-installing-proton-tricks-gui-anchor)
 
-### [:penguin: installing Proton Tricks (shell)](/wiki/protontricks.md#user-content-installing-proton-tricks-shell)
+### [:penguin: installing Proton Tricks (shell)](/wiki/protontricks.md#user-content-installing-proton-tricks-shell-anchor)
 
-### [:scroll: List detected Steam Games (shell)](/wiki/protontricks.md#user-content-list-detected-steam-games-shell)
+### [:scroll: List detected Steam Games (shell)](/wiki/protontricks.md#user-content-list-detected-steam-games-anchor)
 
-### [:mag: Search for an available dependency](/wiki/protontricks.md#user-content-search-for-an-available-dependency)
+### [:mag: Search for an available dependency](/wiki/protontricks.md#user-content-search-for-dependency-anchor)
 
-### [:computer: Install Windows Dependencies](/wiki/protontricks.md#user-content-install-windows-dependencies)
+### [:computer: Install Windows Dependencies](/wiki/protontricks.md#user-content-install-windows-dependencies-anchor)
 
-### [:boom: Reset WINE prefix](/wiki/protontricks.md#user-content-reset-wine-prefix)
+### [:boom: Reset WINE prefix](/wiki/protontricks.md#user-content-reset-wine-prefix-anchor)
 
 <BR><BR>
 
