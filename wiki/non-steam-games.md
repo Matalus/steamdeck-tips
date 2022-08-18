@@ -44,7 +44,7 @@ sudo find /run/media/ -name "*outer*world*exe"
 sudo find /home/deck -name "MassEffectAndromeda.exe"
 ```
 
-<img src="/images/konsole-find-andromeda" height="250">
+<img src="/images/konsole-find-andromeda.jpg" height="250">
 
 
 
