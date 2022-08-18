@@ -23,7 +23,7 @@ sudo find /home/deck/.local/share/ -iname "battle.net*launcher*exe"
 #output
 /home/deck/.local/share/Steam/steamapps/compatdata/2738429330/pfx/drive_c/Program Files (x86)/Battle.net/Battle.net Launcher.exe
  ```
-<img src="/images/konsole-find-bnet.jpg" height="250" width="800">
+<img src="/images/konsole-find-bnet.jpg" height="250" width="900">
 
 <BR>
 
