@@ -6,15 +6,48 @@
 
  ## Find the exe path for non-steam files
  ---
+> You can use `Konsole` and the `find` command in desktop mode to search for any file you want
 
+ 1. Press <kbd>STEAM</kbd> > **Power** > **Desktop Mode**
+ 2. Goto **All Applications** and open **Konsole**
+ 
+**Format your searches from the examples below
+
+> Search for Non-Steam games installed using steam
  ```bash
- # Format: find [dir] -iname [file name (wildcards allowed, case insensitive)]
- # find battle.net launcher EXE path
- find /home/deck/.local/share/ -iname "battle.net*launcher*exe"
+# Format: find [dir] -iname [file name (wildcards allowed, case insensitive)]
+# find battle.net launcher EXE path
+# you'll need to have set a user password previously, if not you can run 'passwd' to do this now
+sudo find /home/deck/.local/share/ -iname "battle.net*launcher*exe"
 
- #output
- /home/deck/.local/share/Steam/steamapps/compatdata/2738429330/pfx/drive_c/Program Files (x86)/Battle.net/Battle.net Launcher.exe
+#output
+/home/deck/.local/share/Steam/steamapps/compatdata/2738429330/pfx/drive_c/Program Files (x86)/Battle.net/Battle.net Launcher.exe
  ```
+<img src="/images/konsole-find-bnet.jpg" height="350">
+
+> Search entire deck for `TheAscent.exe`, `/` is the root directory, meaning everything will be search SSD and SD
+```bash
+sudo find / -name "*ascent*exe"
+```
+
+<img src="/images/konsole-find-ascent.jpg" height="350">
+
+> Search SD Card for `TheOuterWorlds.exe`, `/run/media/` is the is the mount point for SD cards
+```bash
+sudo find /run/media/ -name "*outer*world*exe"
+```
+
+<img src="/images/konsole-find-ascent.jpg" height="350">
+
+> Find `MassEffectAndromeda.exe` in it's `compatdata` folder, `/home/deck/.local/share/Steam/steamapps/compatdata` is where 3rd party stores will install games, provided you used Steam to run the store installer.
+```bash
+sudo find /home/deck -name "MassEffectAndromeda.exe"
+```
+
+<img src="/images/konsole-find-andromeda" height="350">
+
+
+
 <!-- ANCHOR BLOCK: needs to be 2 BR above the actual header due to GitHubs frame -->
 <a name="boilr-install-anchor"></a>
 <BR><BR>
