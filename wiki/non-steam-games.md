@@ -11,7 +11,7 @@
  1. Press <kbd>STEAM</kbd> > **Power** > **Desktop Mode**
  2. Goto **All Applications** and open **Konsole**
  
-**Format your searches from the examples below
+**Format your searches from the examples below**
 
 > Search for Non-Steam games installed using steam
  ```bash
