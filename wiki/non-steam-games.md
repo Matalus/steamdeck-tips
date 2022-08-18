@@ -23,28 +23,28 @@ sudo find /home/deck/.local/share/ -iname "battle.net*launcher*exe"
 #output
 /home/deck/.local/share/Steam/steamapps/compatdata/2738429330/pfx/drive_c/Program Files (x86)/Battle.net/Battle.net Launcher.exe
  ```
-<img src="/images/konsole-find-bnet.jpg" height="350">
+<img src="/images/konsole-find-bnet.jpg" height="250">
 
 > Search entire deck for `TheAscent.exe`, `/` is the root directory, meaning everything will be search SSD and SD
 ```bash
 sudo find / -name "*ascent*exe"
 ```
 
-<img src="/images/konsole-find-ascent.jpg" height="350">
+<img src="/images/konsole-find-ascent.jpg" height="250">
 
 > Search SD Card for `TheOuterWorlds.exe`, `/run/media/` is the is the mount point for SD cards
 ```bash
 sudo find /run/media/ -name "*outer*world*exe"
 ```
 
-<img src="/images/konsole-find-ascent.jpg" height="350">
+<img src="/images/konsole-find-ascent.jpg" height="250">
 
 > Find `MassEffectAndromeda.exe` in it's `compatdata` folder, `/home/deck/.local/share/Steam/steamapps/compatdata` is where 3rd party stores will install games, provided you used Steam to run the store installer.
 ```bash
 sudo find /home/deck -name "MassEffectAndromeda.exe"
 ```
 
-<img src="/images/konsole-find-andromeda" height="350">
+<img src="/images/konsole-find-andromeda" height="250">
 
 
 
