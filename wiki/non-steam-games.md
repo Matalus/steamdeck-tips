@@ -32,7 +32,7 @@ sudo find /home/deck/.local/share/ -iname "battle.net*launcher*exe"
 sudo find / -name "*ascent*exe"
 ```
 
-<img src="/images/konsole-find-ascent.jpg" height="250">
+<img src="/images/konsole-find-ascent.jpg" height="250" width="950">
 
 <BR>
 
@@ -41,7 +41,7 @@ sudo find / -name "*ascent*exe"
 sudo find /run/media/ -name "*outer*world*exe"
 ```
 
-<img src="/images/konsole-find-ascent.jpg" height="250">
+<img src="/images/konsole-find-ascent.jpg" height="250" width="950">
 
 <BR>
 
@@ -50,7 +50,7 @@ sudo find /run/media/ -name "*outer*world*exe"
 sudo find /home/deck -name "MassEffectAndromeda.exe"
 ```
 
-<img src="/images/konsole-find-andromeda.jpg" height="200">
+<img src="/images/konsole-find-andromeda.jpg" height="200" width="950">
 
 <BR>
 
