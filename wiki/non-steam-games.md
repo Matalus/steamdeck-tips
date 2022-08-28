@@ -318,7 +318,7 @@ So lets review what we've found
 | 29GB | /home/deck/.local/share/Steam/steamapps/compatdata/2738429330 | Battle.net (Diablo II Resurrected)
 | 1GB | /home/deck/.local/share/Steam/steamapps/compatdata/########## | Other Non-Steam games
 | 5GB | /home/deck/.local/share/Steam/steamapps/shadercache | Shader Cache
-| 114GB | **Total Accounted**
+| 114GB | **Total Accounted** out of **128GB** *Other* files |
 
 While there still is another 14GB unaccounted for, it's possible some of this is consumed by `common` files for other Non-Steam games as well as `proton` prefixes that didn't get cleanly uninstalled. <BR><BR>
 This isn't a perfect system but hopefully this helped you understand where your storage is going.
