@@ -155,12 +155,16 @@ STEAM_COMPAT_DATA_PATH=/home/deck/.local/share/Steam/steamapps/compatdata/402175
 
  ## Managing Storage
 
+### overview
+
  > The Steam Deck makes it really easy to manage Steam games installed, this is in part due to valve including an `appmanifest` file for each game and package installed that gives it's `SizeOnDisk`
  > unfortunately **Non-Steam** games and utilities don't get totalled into this calculation so you may be left wondering *Where did my space go?*
 
  <img src=/images/settings-storage.jpg height="400">
 
  In this scenario I have a **256GB** Local SSD, approximately **29GB** is used by installed **Steam** games, but another **128GB** is totally unaccounted for. I'll now go through my process to find where that space is consumed.
+
+### basic disk usage
 
  1. Go the desktop mode by pressing <kbd>STEAM</kbd> > Power > Switch to Desktop Mode
  2. open `Konsole`  
@@ -194,8 +198,11 @@ STEAM_COMPAT_DATA_PATH=/home/deck/.local/share/Steam/steamapps/compatdata/402175
   > `grep` (**G**lobal **R**egular **E**xpression **P**rint) is a very useful linux command we can use to filter output and determine what prints on the screen. 
   3. I'll now show different command examples breaking down these results 
 
-<!-- section separator --->
 <BR>
+
+  ### flatpak
+
+<!-- section separator --->
 
 ---
 <!-- end-section-separator --->
@@ -211,6 +218,7 @@ First we notice a number of results in `/home/deck/.var/app` this is where a lot
 <!-- section separator --->
 <BR>
 
+### Heroic Games
 ---
 <!-- end-section-separator --->
 ```bash
@@ -229,6 +237,8 @@ Next we'll look at **Heroic** in `/home/deck/Games/Heroic`, we can see this acco
 ---
 <!-- end-section-separator --->
 
+### Excluding Results
+
 ```bash
  du -h -d3 -t 100M /home/deck | sort -h | grep -Ev 'Heroic|.var'
 ```
@@ -243,6 +253,7 @@ Next we'll look at **Heroic** in `/home/deck/Games/Heroic`, we can see this acco
 <!-- section separator --->
 <BR>
 
+### Steam Apps
 ---
 <!-- end-section-separator --->
 ```bash
@@ -260,6 +271,7 @@ Next we'll look at **Heroic** in `/home/deck/Games/Heroic`, we can see this acco
   <!-- section separator --->
 <BR>
 
+### Compatdata
 ---
 <!-- end-section-separator --->
   ```bash
@@ -318,6 +330,7 @@ In my case I have 38 games installed between my SteamDeck SSD and MicroSD, what'
 <!-- section separator --->
 <BR>
 
+### Filtering Non-Steam Games
 ---
 <!-- end-section-separator --->
 *Which brings us to...*
