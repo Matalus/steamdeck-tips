@@ -194,7 +194,11 @@ STEAM_COMPAT_DATA_PATH=/home/deck/.local/share/Steam/steamapps/compatdata/402175
   > `grep` (**G**lobal **R**egular **E**xpression **P**rint) is a very useful linux command we can use to filter output and determine what prints on the screen. 
   3. I'll now show different command examples breaking down these results 
 
+<!-- section separator --->
+<BR>
+
 ---
+<!-- end-section-separator --->
 ```bash
  du -h -d3 -t 100M /home/deck | sort -h | grep .var/app
 ```
@@ -204,7 +208,11 @@ First we notice a number of results in `/home/deck/.var/app` this is where a lot
 
   <img src=/images/du-var-app.jpg height="120">
 
+<!-- section separator --->
+<BR>
+
 ---
+<!-- end-section-separator --->
 ```bash
  du -h -d3 -t 100M /home/deck | sort -h | grep Heroic
 ```
@@ -215,8 +223,12 @@ Next we'll look at **Heroic** in `/home/deck/Games/Heroic`, we can see this acco
 
   <img src=/images/du-heroic.jpg height="120">
 
+<!-- section separator --->
 <BR>
+
 ---
+<!-- end-section-separator --->
+
 ```bash
  du -h -d3 -t 100M /home/deck | sort -h | grep -Ev 'Heroic|.var'
 ```
@@ -228,8 +240,11 @@ Next we'll look at **Heroic** in `/home/deck/Games/Heroic`, we can see this acco
 
   We can see that `.paradoxlauncher` (Stellaris) seems to account for about 500MB, there's about 1.2GB of `.cache` data so we've accounted for about **24GB** of `other` data in total now, but we still have over **100GB** unaccounted for.
 
+<!-- section separator --->
 <BR>
+
 ---
+<!-- end-section-separator --->
 ```bash
  du -h -d1 -t 100M /home/deck/.local/share/Steam | sort -h
 ```
@@ -242,6 +257,11 @@ Next we'll look at **Heroic** in `/home/deck/Games/Heroic`, we can see this acco
   We immediately see that `steamapps` is consuming **120GB** there's also a number of other smaller directories, that appear related to the OS or Proton compatibility. <BR>
   `du -h -d1 -t 100M --exclude="steamapps" -c /home/deck/.local/share/Steam | sort -h` will show us the results excluding the `steamapps` directory `--exclude="steamapps"` will exclude this pattern and `-c` will add a total line so we can see how much these directories consume, in my case it's **5.3GB** we'll round up in case we missed anything
 
+  <!-- section separator --->
+<BR>
+
+---
+<!-- end-section-separator --->
   ```bash
   du -h -d1 -t 100M  /home/deck/.local/share/Steam/steamapps/compatdata | sort -h
   ```
@@ -295,6 +315,11 @@ Next we'll look at **Heroic** in `/home/deck/Games/Heroic`, we can see this acco
 
 In my case I have 38 games installed between my SteamDeck SSD and MicroSD, what's worth noting is steam uses `<APPID>` to identify where game files are installed for `shadercache` `compatdata` and other files. Most Steam AppIDs are 3-7 digits long, the longer numbers are mostly likely 3rd party **Non-Steam** games, we should focus on those
 
+<!-- section separator --->
+<BR>
+
+---
+<!-- end-section-separator --->
 *Which brings us to...*
 ```bash
 # In the IT Industry we call that a One-Liner :)
@@ -311,10 +336,14 @@ And now it all starts to make sense... <BR>
 
 *You don't have to understand regular expression to use it, just paste the full command above and you'll get similar results<BR> I've been using REGEX for 15+ years and I still get confused and think it's Black Magic half the time*
 
+<!-- section separator --->
 <BR>
 
-### Storage Breakdown
 ---
+<!-- end-section-separator --->
+
+### Storage Breakdown
+
 
 So lets review what we've found
 
