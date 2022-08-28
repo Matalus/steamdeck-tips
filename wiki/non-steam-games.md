@@ -194,6 +194,7 @@ STEAM_COMPAT_DATA_PATH=/home/deck/.local/share/Steam/steamapps/compatdata/402175
   > `grep` (**G**lobal **R**egular **E**xpression **P**rint) is a very useful linux command we can use to filter output and determine what prints on the screen. 
   3. I'll now show different command examples breaking down these results 
 
+---
 ```bash
  du -h -d3 -t 100M /home/deck | sort -h | grep .var/app
 ```
@@ -203,6 +204,7 @@ First we notice a number of results in `/home/deck/.var/app` this is where a lot
 
   <img src=/images/du-var-app.jpg height="120">
 
+---
 ```bash
  du -h -d3 -t 100M /home/deck | sort -h | grep Heroic
 ```
@@ -213,6 +215,7 @@ Next we'll look at **Heroic** in `/home/deck/Games/Heroic`, we can see this acco
 
   <img src=/images/du-heroic.jpg height="120">
 
+---
 ```bash
  du -h -d3 -t 100M /home/deck | sort -h | grep -Ev 'Heroic|.var'
 ```
@@ -224,6 +227,9 @@ Next we'll look at **Heroic** in `/home/deck/Games/Heroic`, we can see this acco
 
   We can see that `.paradoxlauncher` (Stellaris) seems to account for about 500MB, there's about 1.2GB of `.cache` data so we've accounted for about **24GB** of `other` data in total now, but we still have over **100GB** unaccounted for.
 
+<BR>
+
+---
 ```bash
  du -h -d1 -t 100M /home/deck/.local/share/Steam | sort -h
 ```
@@ -234,13 +240,17 @@ Next we'll look at **Heroic** in `/home/deck/Games/Heroic`, we can see this acco
   <img src=/images/du-steamapps.jpg height="120">
 
   We immediately see that `steamapps` is consuming **120GB** there's also a number of other smaller directories, that appear related to the OS or Proton compatibility. <BR>
-  `du -h -d1 -t 100M --exclude="steamapps" -c /home/deck/.local/share/Steam | sort -h` will show us the results excluding the `steamapps` directory `--exclude="steamapps"` will exclude this pattern and `-c` will add a total line so we can see much these directories consume, in my case it's **5.3GB** we'll round up in case we missed anything
+  `du -h -d1 -t 100M --exclude="steamapps" -c /home/deck/.local/share/Steam | sort -h` will show us the results excluding the `steamapps` directory `--exclude="steamapps"` will exclude this pattern and `-c` will add a total line so we can see how much these directories consume, in my case it's **5.3GB** we'll round up in case we missed anything
 
   ```bash
   du -h -d1 -t 100M  /home/deck/.local/share/Steam/steamapps/compatdata | sort -h
   ```
   > the `compatdata` directory is where the **proton** compatibility files get installed for every game, this can really add up if steam fails to delete the directories for games you uninstall or if a **Non-Steam** game doesn't get cleaned up properly <BR>
   Additionally any **Non-Steam** game that you use **Steam** to install will have the entire game installed into it's `compatdata` directory
+
+<BR><BR>
+  
+  *Contents of my `compatdata` directory*
 
   ```
   188M    /home/deck/.local/share/Steam/steamapps/compatdata/1042800
