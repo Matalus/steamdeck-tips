@@ -215,7 +215,7 @@ Next we'll look at **Heroic** in `/home/deck/Games/Heroic`, we can see this acco
 
   <img src=/images/du-heroic.jpg height="120">
 
----
+<BR>---
 ```bash
  du -h -d3 -t 100M /home/deck | sort -h | grep -Ev 'Heroic|.var'
 ```
@@ -227,9 +227,7 @@ Next we'll look at **Heroic** in `/home/deck/Games/Heroic`, we can see this acco
 
   We can see that `.paradoxlauncher` (Stellaris) seems to account for about 500MB, there's about 1.2GB of `.cache` data so we've accounted for about **24GB** of `other` data in total now, but we still have over **100GB** unaccounted for.
 
-<BR>
-
----
+<BR>---
 ```bash
  du -h -d1 -t 100M /home/deck/.local/share/Steam | sort -h
 ```
