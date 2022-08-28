@@ -200,7 +200,7 @@ First we notice a number of results in `/home/deck/.var/app` this is where a lot
 
  <BR>
 
-  <img src=/images/du-var-app.jpg height="300">
+  <img src=/images/du-var-app.jpg height="200">
 
 ```bash
  du -h -d3 -t 100M /home/deck | sort -h | grep Heroic
@@ -210,7 +210,7 @@ Next we'll look at **Heroic** in `/home/deck/Games/Heroic`, we can see this acco
 
  <BR>
 
-  <img src=/images/du-heroic.jpg height="300">
+  <img src=/images/du-heroic.jpg height="200">
 
 ```bash
  du -h -d3 -t 100M /home/deck | sort -h | grep -Ev 'Heroic|.var'
@@ -230,7 +230,7 @@ Next we'll look at **Heroic** in `/home/deck/Games/Heroic`, we can see this acco
 
  <BR>
 
-  <img src=/images/du-steamapps.jpg height="300">
+  <img src=/images/du-steamapps.jpg height="200">
 
   We immediately see that `steamapps` is consuming **120GB** there's also a number of other smaller directories, that appear related to the OS or Proton compatibility. <BR>
   `du -h -d1 -t 100M --exclude="steamapps" -c /home/deck/.local/share/Steam | sort -h` will show us the results excluding the `steamapps` directory `--exclude="steamapps"` will exclude this pattern and `-c` will add a total line so we can see much these directories consume, in my case it's **5.3GB** we'll round up in case we missed anything
@@ -291,8 +291,11 @@ du -h -d1 -t 100M  /home/deck/.local/share/Steam/steamapps/compatdata | sort -h 
 ```
 <BR>
 
+> I'll try to explain a few things <BR> `awk` is being used to select only the 2nd column from our `du` command <BR> `grep -E` is being used to find directory names that have between 8 and 20 digits in the name since most APPIDs are 7 or less digits <BR> `[[:digit]]` is a class selector, it's matching only numeric characters <BR> `xargs` allows us to pass the output of our previous command to another command so I'm passing only the directory's that I believe to be **Non-Steam** games to another `du` command to narrow down the results. <BR> lastly `grep drive_c` is finding the fake `c:\` that exists in wine prefixes this is where Windows files will reside
+
 <img src=/images/du-compatdata-breakdown.jpg height=400>
 
-> I'll try to explain a few things <BR> `awk` is being used to select only the 2nd column from our `du` command <BR> `grep -E` is being used to find directory names that have between 8 and 20 digits in the name since most APPIDs are 7 or less digits <BR> `[[:digit]]` is a class selector, it's matching only numeric characters <BR> `xargs` allows us to pass the output of our previous command to another command so I'm passing only the directory's that I believe to be **Non-Steam** games to another `du` command to narrow down the results. <BR> lastly `grep drive_c` is finding the fake `c:\` that exists in wine prefixes this is where Windows files will reside
+And now it all starts to make sense... <BR>
+`4021751282` appears to be where I installed the **Origin** store and also installed **Mass Effect Andromeda** accounting for another **49GB** <BR> `2738429330` seems to be a **Non-Steam** installation of **Battle.net** including **Diablo II Resurrected** another **29GB** <BR> The remaining **Non-Steam** directories account for another about **1GB**
 
 *You don't have to understand regular expression to use it, just paste the full command above and you'll get similar results<BR> I've been using REGEX for 15+ years and I still get confused and think it's Black Magic half the time*
