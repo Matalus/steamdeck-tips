@@ -184,7 +184,7 @@ STEAM_COMPAT_DATA_PATH=/home/deck/.local/share/Steam/steamapps/compatdata/402175
 
  <BR>
 
-  <img src=/images/du-home-1.jpg height="200">
+  <img src=/images/du-home-1.jpg height="300">
 
 
 
