@@ -148,3 +148,15 @@ STEAM_COMPAT_DATA_PATH=/home/deck/.local/share/Steam/steamapps/compatdata/402175
 - Proton Crash Logs `/tmp/proton_crashreports`
 - Heroic Games Launcher Logs `/home/deck/.var/app/com.heroicgameslauncher.hgl/config/heroic/GamesConfig`
 - Steam Launcher Logs `/home/deck/.local/share/Steam/logs/`
+
+<!-- ANCHOR BLOCK: needs to be 2 BR above the actual header due to GitHubs frame -->
+<a name="find-exe-anchor"></a>
+<BR><BR>
+
+ ## Managing Storage
+
+ > The Steam Deck makes it really easy to manage Steam games installed, this is in part due to valve including an `appmanifest` file for each game and package installed that gives it's `SizeOnDisk`
+ > unfortunately **Non-Steam** games and utilities don't get totalled into this calculation so you may be left wondering *Where did my space go?*
+
+ <img src=/images/settings-storage.jpg height="300" width="950">
+
