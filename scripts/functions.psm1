@@ -10,8 +10,7 @@ function Find-AppManifest ([array]$Root) {
 
     $jobs = @()
     ForEach ($Drive in $Root) {
-
-        Write-Host -ForegroundColor Cyan "$(Get-Date -format u) | Scanning$(if($Drive.VolumeName.Trim().Length -ge 1){" Volume: $($Drive.VolumeName)"}) Drive: $($Drive.DeviceID) for Steam Libraries..."
+        Write-Host -ForegroundColor Cyan "$(Get-Date -format u) | Scanning$(if($Drive.VolumeName -and $Drive.VolumeName.Trim().Length -ge 1){" Volume: $($Drive.VolumeName)"}) Drive: $($Drive.DeviceID) for Steam Libraries..."
         $JobName = "SteamLibSearch_$($Drive.DeviceID.Replace(":",$null))"
         #     $RoboParams = @{
         #         FilePath               = "C:\Windows\system32\Robocopy.exe"
