@@ -150,7 +150,7 @@ STEAM_COMPAT_DATA_PATH=/home/deck/.local/share/Steam/steamapps/compatdata/402175
 - Steam Launcher Logs `/home/deck/.local/share/Steam/logs/`
 
 <!-- ANCHOR BLOCK: needs to be 2 BR above the actual header due to GitHubs frame -->
-<a name="find-exe-anchor"></a>
+<a name="managing-storage-anchor"></a>
 <BR><BR>
 
  ## Managing Storage
@@ -292,7 +292,7 @@ du -h -d1 -t 100M  /home/deck/.local/share/Steam/steamapps/compatdata | sort -h 
 ```
 <BR>
 
-> I'll try to explain a few things <BR> `awk` is being used to select only the 2nd column from our `du` command <BR> `grep -E` is being used to find directory names that have between 8 and 20 digits in the name since most APPIDs are 7 or less digits <BR> `[[:digit]]` is a class selector, it's matching only numeric characters <BR> `xargs` allows us to pass the output of our previous command to another command so I'm passing only the directory's that I believe to be **Non-Steam** games to another `du` command to narrow down the results. <BR> lastly `grep drive_c` is finding the fake `c:\` that exists in wine prefixes this is where Windows files will reside
+> I'll try to explain a few things <BR> `awk` is being used to select only the 2nd column from our `du` command <BR> `grep -E` is being used to find directory names that have between 8 and 20 digits in the name since most APPIDs are 7 or less digits <BR> `[[:digit]]` is a class selector, it's matching only numeric characters, and `{8,20}` is only matching filenames between 8-20 digits long <BR> `xargs` allows us to pass the output of our previous command to another command so I'm passing only the directory's that I believe to be **Non-Steam** games to another `du` command to narrow down the results. <BR> lastly `grep drive_c` is finding the fake `c:\` that exists in wine prefixes this is where Windows files will reside
 
 <img src=/images/du-compatdata-breakdown.jpg height=400>
 
