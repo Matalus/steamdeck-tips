@@ -200,7 +200,7 @@ First we notice a number of results in `/home/deck/.var/app` this is where a lot
 
  <BR>
 
-  <img src=/images/du-var-app.jpg height="400">
+  <img src=/images/du-var-app.jpg height="300">
 
 ```bash
  du -h -d3 -t 100M /home/deck | sort -h | grep Heroic
@@ -210,7 +210,7 @@ Next we'll look at **Heroic** in `/home/deck/Games/Heroic`, we can see this acco
 
  <BR>
 
-  <img src=/images/du-heroic.jpg height="400">
+  <img src=/images/du-heroic.jpg height="300">
 
 ```bash
  du -h -d3 -t 100M /home/deck | sort -h | grep -Ev 'Heroic|.var'
@@ -219,10 +219,80 @@ Next we'll look at **Heroic** in `/home/deck/Games/Heroic`, we can see this acco
  
  <BR>
 
-  <img src=/images/du-grep-v.jpg height="400">
+  <img src=/images/du-grep-v.jpg height="300">
 
-  We can see that `.paradoxlauncher` seems to account for about 500MB, there's about 1.2GB of `.cache` data so we've accounted for about **24GB** of `other` data now, but we still have over **100GB** unaccounted for.
+  We can see that `.paradoxlauncher` (Stellaris) seems to account for about 500MB, there's about 1.2GB of `.cache` data so we've accounted for about **24GB** of `other` data in total now, but we still have over **100GB** unaccounted for.
 
 ```bash
- du -h -d3 -t 100M /home/deck/.local/share/Steam/steamapps | sort -h
+ du -h -d1 -t 100M /home/deck/.local/share/Steams | sort -h
 ```
+> we're now targeting the `Steam` directory
+
+ <BR>
+
+  <img src=/images/du-steamapps.jpg height="300">
+
+  We immediately see that `steamapps` is consuming **120GB** there's also a number of other smaller directories, that appear related to the OS or Proton compatibility. <BR>
+  `du -h -d1 -t 100M --exclude="steamapps" -c /home/deck/.local/share/Steam | sort -h` will show us the results excluding the `steamapps` directory `--exclude="steamapps"` will exclude this pattern and `-c` will add a total line so we can see much these directories consume, in my case it's **5.3GB** we'll round up in case we missed anything
+
+  ```bash
+  du -h -d1 -t 100M  /home/deck/.local/share/Steam/steamapps/compatdata | sort -h
+  ```
+  > the `compatdata` directory is where the **proton** compatibility files get installed for every game, this can really add up if steam fails to delete the directories for games you uninstall or if a **Non-Steam** game doesn't get cleaned up properly <BR>
+  Additionally any **Non-Steam** game that you use **Steam** to install will have the entire game installed into it's `compatdata` directory
+
+  ```
+  188M    /home/deck/.local/share/Steam/steamapps/compatdata/1042800
+188M    /home/deck/.local/share/Steam/steamapps/compatdata/1944570
+188M    /home/deck/.local/share/Steam/steamapps/compatdata/2024230
+188M    /home/deck/.local/share/Steam/steamapps/compatdata/238960
+188M    /home/deck/.local/share/Steam/steamapps/compatdata/2611203949
+188M    /home/deck/.local/share/Steam/steamapps/compatdata/323190
+188M    /home/deck/.local/share/Steam/steamapps/compatdata/527430
+188M    /home/deck/.local/share/Steam/steamapps/compatdata/632360
+189M    /home/deck/.local/share/Steam/steamapps/compatdata/1774050
+189M    /home/deck/.local/share/Steam/steamapps/compatdata/1869380
+189M    /home/deck/.local/share/Steam/steamapps/compatdata/1887720
+189M    /home/deck/.local/share/Steam/steamapps/compatdata/2106550
+189M    /home/deck/.local/share/Steam/steamapps/compatdata/2113430
+189M    /home/deck/.local/share/Steam/steamapps/compatdata/911430
+190M    /home/deck/.local/share/Steam/steamapps/compatdata/2083070
+191M    /home/deck/.local/share/Steam/steamapps/compatdata/396480
+192M    /home/deck/.local/share/Steam/steamapps/compatdata/1794680
+200M    /home/deck/.local/share/Steam/steamapps/compatdata/2579677180
+202M    /home/deck/.local/share/Steam/steamapps/compatdata/1966900
+204M    /home/deck/.local/share/Steam/steamapps/compatdata/1660320
+215M    /home/deck/.local/share/Steam/steamapps/compatdata/0
+216M    /home/deck/.local/share/Steam/steamapps/compatdata/2581508876
+216M    /home/deck/.local/share/Steam/steamapps/compatdata/2791824981
+216M    /home/deck/.local/share/Steam/steamapps/compatdata/3550137221
+217M    /home/deck/.local/share/Steam/steamapps/compatdata/4275862806
+260M    /home/deck/.local/share/Steam/steamapps/compatdata/700600
+337M    /home/deck/.local/share/Steam/steamapps/compatdata/2914290092
+420M    /home/deck/.local/share/Steam/steamapps/compatdata/288370
+424M    /home/deck/.local/share/Steam/steamapps/compatdata/1062090
+427M    /home/deck/.local/share/Steam/steamapps/compatdata/710920
+436M    /home/deck/.local/share/Steam/steamapps/compatdata/1030210
+468M    /home/deck/.local/share/Steam/steamapps/compatdata/290300
+502M    /home/deck/.local/share/Steam/steamapps/compatdata/979690
+523M    /home/deck/.local/share/Steam/steamapps/compatdata/219990
+624M    /home/deck/.local/share/Steam/steamapps/compatdata/1128920
+645M    /home/deck/.local/share/Steam/steamapps/compatdata/768520
+29G     /home/deck/.local/share/Steam/steamapps/compatdata/2738429330
+49G     /home/deck/.local/share/Steam/steamapps/compatdata/4021751282
+```
+
+In my case I have 38 games installed between my SteamDeck SSD and MicroSD, what's worth noting is steam uses `<APPID>` to identify where game files are installed for `shadercache` `compatdata` and other files. Most Steam AppIDs are 3-7 digits long, the longer numbers are mostly likely 3rd party **Non-Steam** games, we should focus on those
+
+*Which brings us to...*
+```bash
+# In the IT Industry we call that a One-Liner :)
+du -h -d1 -t 100M  /home/deck/.local/share/Steam/steamapps/compatdata | sort -h | awk '{print $2}' | grep -E '\/[[:digit:]]{8,20}$' | xargs du -h -d5 -t 200M | grep drive_c | sort -h
+```
+<BR>
+
+<img src=/images/du-compatdata-breakdown.jpg height=400>
+
+> I'll try to explain a few things <BR> `awk` is being used to select only the 2nd column from our `du` command <BR> `grep -E` is being used to find directory names that have between 8 and 20 digits in the name since most APPIDs are 7 or less digits <BR> `[[:digit]]` is a class selector, it's matching only numeric characters <BR> `xargs` allows us to pass the output of our previous command to another command so I'm passing only the directory's that I believe to be **Non-Steam** games to another `du` command to narrow down the results. <BR> lastly `grep drive_c` is finding the fake `c:\` that exists in wine prefixes this is where Windows files will reside
+
+*You don't have to understand regular expression to use it, just paste the full command above and you'll get similar results<BR> I've been using REGEX for 15+ years and I still get confused and think it's Black Magic half the time*
