@@ -65,6 +65,8 @@ Wiki and files relevant to my Steam Deck tinkering, and all things about NOT pla
 
 ### [:mag: Find the exe path for non-steam files](/wiki/non-steam-games.md#user-content-find-exe-anchor)
 
+### [:cd: Managing Storage](/wiki/non-steam-games.md#user-content-managing-storage-anchor)
+
 ### [:hammer: BoilR (import non-steam shortcuts and cover art)](/wiki/non-steam-games.md#user-content-boilr-install-anchor)
 
 ### [:hammer: BoilR (import cover art from SteamGridDB)](/wiki/non-steam-games.md#user-content-boilr-steamgriddb-anchor)
