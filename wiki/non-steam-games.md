@@ -168,6 +168,24 @@ STEAM_COMPAT_DATA_PATH=/home/deck/.local/share/Steam/steamapps/compatdata/402175
  ```bash
  df -h
  ```
+ > `df` = linux command for **Disk Free**
+
  <img src=/images/df-h.jpg height="300">
+
+ This will give us a breakdown of how each disk partition and mountpoint is using space.
+
+ Since **SteamOS** uses an immutable file system, we'll want to focus on our `/home/deck` directory
+
+ 1. Run the following command
+ ```bash
+ du -h -d3 -t 100M /home/deck | sort -h
+ ```
+ > `du` = linux command for **Disk Usage** `-h` = **Human-Readable**, so we'll see directory sizes in standard units vs bytes, `-d3` = **depth** this will show us only subdirectories that are 3 or less levels down from the top `/home/deck` directory `-t 500M` sets the size threshold to results greater than 100MB
+
+  <img src=/images/du-home.jpg height="300">
+
+
+
+ 
 
 
