@@ -163,7 +163,8 @@ STEAM_COMPAT_DATA_PATH=/home/deck/.local/share/Steam/steamapps/compatdata/402175
  In this scenario I have a **256GB** Local SSD, approximately **29GB** is used by installed **Steam** games, but another **128GB** is totally unaccounted for. I'll now go through my process to find where that space is consumed.
 
  1. Go the desktop mode by pressing <kbd>STEAM</kbd> > Power > Switch to Desktop Mode
- 2. open `Konsole`
+ 2. open `Konsole`  
+ >alternatively you can connect via SSH from another PC `ssh deck@steamdeck` this makes pasting long commands significantly easier
  3. Run the following command at the prompt
  ```bash
  df -h
@@ -180,7 +181,7 @@ STEAM_COMPAT_DATA_PATH=/home/deck/.local/share/Steam/steamapps/compatdata/402175
  ```bash
  du -h -d3 -t 100M /home/deck | sort -h
  ```
- > `du` = linux command for **Disk Usage** `-h` = **Human-Readable**, so we'll see directory sizes in standard units vs bytes, `-d3` = **depth** this will show us only subdirectories that are 3 or less levels down from the top `/home/deck` directory `-t 500M` sets the size threshold to results greater than 100MB
+ > `du` = linux command for **Disk Usage** `-h` = **Human-Readable**, so we'll see directory sizes in standard units vs bytes, `-d3` = **depth** this will show us only subdirectories that are 3 or less levels down from the top `/home/deck` directory `-t 100M` sets the size threshold to results greater than 100MB
  ><BR><BR>PROTIP: pressing the <kbd>up</kbd> arrow will always go back to your last command, this is easier than retyping each time.
 
  <BR>
@@ -299,3 +300,25 @@ And now it all starts to make sense... <BR>
 `4021751282` appears to be where I installed the **Origin** store and also installed **Mass Effect Andromeda** accounting for another **49GB** <BR> `2738429330` seems to be a **Non-Steam** installation of **Battle.net** including **Diablo II Resurrected** another **29GB** <BR> The remaining **Non-Steam** directories account for another about **1GB**
 
 *You don't have to understand regular expression to use it, just paste the full command above and you'll get similar results<BR> I've been using REGEX for 15+ years and I still get confused and think it's Black Magic half the time*
+
+<BR>
+
+### Storage Breakdown
+---
+
+So lets review what we've found
+
+| size | directory | contents |
+| --- | --- | --- |
+| 2GB | /home/deck/.var/apps | flatpak apps |
+| 20GB | /home/deck/Games/Heroic | Heroic Games Launcher Games |
+| 2GB | /home/deck/.paradoxlauncher and .cache | Hidden Launcher and generic cache files |
+| 6GB | /home/deck/.local/share/Steam *except* `steamapps` | SteamOS and Compatibility files |
+| 49GB | /home/deck/.local/share/Steam/steamapps/compatdata/4021751282 | Origin (Mass Effect Andromeda) |
+| 29GB | /home/deck/.local/share/Steam/steamapps/compatdata/2738429330 | Battle.net (Diablo II Resurrected)
+| 1GB | /home/deck/.local/share/Steam/steamapps/compatdata/########## | Other Non-Steam games
+| 5GB | /home/deck/.local/share/Steam/steamapps/shadercache | Shader Cache
+| 114GB | **Total Accounted**
+
+While there still is another 14GB unaccounted for, it's possible some of this is consumed by `common` files for other Non-Steam games as well as `proton` prefixes that didn't get cleanly uninstalled. <BR><BR>
+This isn't a perfect system but hopefully this helped you understand where your storage is going.
