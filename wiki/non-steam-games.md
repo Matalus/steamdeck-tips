@@ -220,7 +220,7 @@ Next we'll look at **Heroic** in `/home/deck/Games/Heroic`, we can see this acco
  
  <BR>
 
-  <img src=/images/du-grep-v.jpg height="300">
+  <img src=/images/du-grep-v.jpg height="200">
 
   We can see that `.paradoxlauncher` (Stellaris) seems to account for about 500MB, there's about 1.2GB of `.cache` data so we've accounted for about **24GB** of `other` data in total now, but we still have over **100GB** unaccounted for.
 
@@ -231,7 +231,7 @@ Next we'll look at **Heroic** in `/home/deck/Games/Heroic`, we can see this acco
 
  <BR>
 
-  <img src=/images/du-steamapps.jpg height="100">
+  <img src=/images/du-steamapps.jpg height="120">
 
   We immediately see that `steamapps` is consuming **120GB** there's also a number of other smaller directories, that appear related to the OS or Proton compatibility. <BR>
   `du -h -d1 -t 100M --exclude="steamapps" -c /home/deck/.local/share/Steam | sort -h` will show us the results excluding the `steamapps` directory `--exclude="steamapps"` will exclude this pattern and `-c` will add a total line so we can see much these directories consume, in my case it's **5.3GB** we'll round up in case we missed anything
