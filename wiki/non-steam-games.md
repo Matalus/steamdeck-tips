@@ -181,6 +181,7 @@ STEAM_COMPAT_DATA_PATH=/home/deck/.local/share/Steam/steamapps/compatdata/402175
  du -h -d3 -t 100M /home/deck | sort -h
  ```
  > `du` = linux command for **Disk Usage** `-h` = **Human-Readable**, so we'll see directory sizes in standard units vs bytes, `-d3` = **depth** this will show us only subdirectories that are 3 or less levels down from the top `/home/deck` directory `-t 500M` sets the size threshold to results greater than 100MB
+ ><BR><BR>PROTIP: pressing the <kbd>up</kbd> arrow will always go back to your last command, this is easier than retyping each time.
 
  <BR>
 
@@ -188,6 +189,40 @@ STEAM_COMPAT_DATA_PATH=/home/deck/.local/share/Steam/steamapps/compatdata/402175
 
 
 
+  2. We can filter the results using the `grep` command, we'll use this to filter specific patterns
+  > `grep` (**G**lobal **R**egular **E**xpression **P**rint) is a very useful linux command we can use to filter output and determine what prints on the screen. 
+  3. I'll now show different command examples breaking down these results 
+
+```bash
+ du -h -d3 -t 100M /home/deck | sort -h | grep .var/app
+```
+First we notice a number of results in `/home/deck/.var/app` this is where a lot of our packaged desktop applications will go, <BR>anything we install using either `flatpak` or `Discover` will go to this directory, <BR>we can see **Chrome**, **protontricks** and **Heroic Games Launcher** all installed here so this accounts for about **2GB** in my case.
+
+ <BR>
+
+  <img src=/images/du-var-app.jpg height="400">
+
+```bash
+ du -h -d3 -t 100M /home/deck | sort -h | grep Heroic
+```
+
+Next we'll look at **Heroic** in `/home/deck/Games/Heroic`, we can see this accounts for a full **20GB** of space,<BR> and we can see both **Rebel Galaxy Outlaw** and **Unrailed** installed as well as some prefix data.
+
+ <BR>
+
+  <img src=/images/du-heroic.jpg height="400">
+
+```bash
+ du -h -d3 -t 100M /home/deck | sort -h | grep -Ev 'Heroic|.var'
+```
+> we're now using `grep -Ev` this is an inverted match, we're now looking for lines that **don't** match the pattern <BR>`-E` turns on **extended regular expression** which allows us to use more advanced patterns <BR> `|` is a separator, any pattern we place in this string with the separator will be filtered out of the results so in this case we're filtering out our previous results containing `Heroic` and `.var`
  
+ <BR>
 
+  <img src=/images/du-grep-v.jpg height="400">
 
+  We can see that `.paradoxlauncher` seems to account for about 500MB, there's about 1.2GB of `.cache` data so we've accounted for about **24GB** of `other` data now, but we still have over **100GB** unaccounted for.
+
+```bash
+ du -h -d3 -t 100M /home/deck/.local/share/Steam/steamapps | sort -h
+```
