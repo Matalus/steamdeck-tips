@@ -182,6 +182,8 @@ STEAM_COMPAT_DATA_PATH=/home/deck/.local/share/Steam/steamapps/compatdata/402175
  ```
  > `du` = linux command for **Disk Usage** `-h` = **Human-Readable**, so we'll see directory sizes in standard units vs bytes, `-d3` = **depth** this will show us only subdirectories that are 3 or less levels down from the top `/home/deck` directory `-t 500M` sets the size threshold to results greater than 100MB
 
+ <BR>
+
   <img src=/images/du-home.jpg height="200">
 
 
