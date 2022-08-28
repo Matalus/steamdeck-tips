@@ -201,7 +201,7 @@ First we notice a number of results in `/home/deck/.var/app` this is where a lot
 
  <BR>
 
-  <img src=/images/du-var-app.jpg height="200">
+  <img src=/images/du-var-app.jpg height="120">
 
 ```bash
  du -h -d3 -t 100M /home/deck | sort -h | grep Heroic
@@ -211,7 +211,7 @@ Next we'll look at **Heroic** in `/home/deck/Games/Heroic`, we can see this acco
 
  <BR>
 
-  <img src=/images/du-heroic.jpg height="150">
+  <img src=/images/du-heroic.jpg height="120">
 
 ```bash
  du -h -d3 -t 100M /home/deck | sort -h | grep -Ev 'Heroic|.var'
