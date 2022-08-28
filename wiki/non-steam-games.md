@@ -211,7 +211,7 @@ Next we'll look at **Heroic** in `/home/deck/Games/Heroic`, we can see this acco
 
  <BR>
 
-  <img src=/images/du-heroic.jpg height="200">
+  <img src=/images/du-heroic.jpg height="150">
 
 ```bash
  du -h -d3 -t 100M /home/deck | sort -h | grep -Ev 'Heroic|.var'
@@ -231,7 +231,7 @@ Next we'll look at **Heroic** in `/home/deck/Games/Heroic`, we can see this acco
 
  <BR>
 
-  <img src=/images/du-steamapps.jpg height="200">
+  <img src=/images/du-steamapps.jpg height="150">
 
   We immediately see that `steamapps` is consuming **120GB** there's also a number of other smaller directories, that appear related to the OS or Proton compatibility. <BR>
   `du -h -d1 -t 100M --exclude="steamapps" -c /home/deck/.local/share/Steam | sort -h` will show us the results excluding the `steamapps` directory `--exclude="steamapps"` will exclude this pattern and `-c` will add a total line so we can see much these directories consume, in my case it's **5.3GB** we'll round up in case we missed anything
