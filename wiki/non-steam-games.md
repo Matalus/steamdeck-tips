@@ -164,8 +164,10 @@ STEAM_COMPAT_DATA_PATH=/home/deck/.local/share/Steam/steamapps/compatdata/402175
 
  In this scenario I have a **256GB** Local SSD, approximately **29GB** is used by installed **Steam** games, but another **128GB** is totally unaccounted for. I'll now go through my process to find where that space is consumed.
 
-### basic disk usage
+<BR>
 
+### basic disk usage
+---
  1. Go the desktop mode by pressing <kbd>STEAM</kbd> > Power > Switch to Desktop Mode
  2. open `Konsole`  
  >alternatively you can connect via SSH from another PC `ssh deck@steamdeck` this makes pasting long commands significantly easier
@@ -181,6 +183,10 @@ STEAM_COMPAT_DATA_PATH=/home/deck/.local/share/Steam/steamapps/compatdata/402175
 
  Since **SteamOS** uses an immutable file system, we'll want to focus on our `/home/deck` directory
 
+<BR>
+
+### Home Directory Overview
+---
  1. Run the following command
  ```bash
  du -h -d3 -t 100M /home/deck | sort -h
