@@ -231,11 +231,18 @@ While ($copymore -like "*y*") {
     # Copy Files to Remote Media
     Write-Host -ForegroundColor Green "$(Get-Date -format u) | Transferring Games to Deck..."
     ForEach ($Game in $SelectApps) {
+        # Test for dest steam library
+        if(!$DeckLib.SteamLibrary -match ".*steamapps$"){
+            $LibraryPath = "$($DeckLib.DeviceID)\steamapps"
+            $null = New-Item -ItemType Directory -Path $LibraryPath  -Verbose
+            $DeckLib | Add-Member SteamLibrary($LibraryPath) -Force
+        }
+
         $TransferCount++
         Write-Host -ForegroundColor White -BackgroundColor DarkGreen "[ $('{0:00}' -f $TransferCount) / $('{0:00}' -f $SelectApps.Count) ] Game: $($Game.Name) AppID: $($Game.AppID) Size: $($Game.GB)GB"
         Write-Host -ForegroundColor Cyan "---> App Manifest: $($Game.Name) ID: $($Game.AppID)..."
         #$manifargs = "'$(Split-Path -Parent $Game.AppManifest)' '$($DeckLib.SteamLibrary)' '$(Split-Path -Leaf $Game.AppManifest)' /NC"
-        
+
         # Copy App Manifest to Destination steamapps
         Copy-Item -Path $Game.AppManifest -Destination $DeckLib.SteamLibrary -Verbose -Force
         
