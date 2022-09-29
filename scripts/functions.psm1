@@ -118,20 +118,29 @@ function Convert-AppManifest ($Manifest, [switch]$Deck) {
         $Location = "SteamDeck"
     }
     else {
-        $Location = $AllDrives | Where-Object {$_.DeviceID -eq ($ManifestPath -split "\\" | Select-Object -First 1)} | Select-Object -ExpandProperty Description
+        $Location = $AllDrives | Where-Object { $_.DeviceID -eq ($ManifestPath -split "\\" | Select-Object -First 1) } | Select-Object -ExpandProperty Description
     }
-
-    $App = [pscustomobject]@{
-        Name        = [regex]::Matches($Content, '\"name\"\s+\".*"') | Select-Object -ExpandProperty Value | ForEach-Object { $_ -split '"' } | ForEach-Object { $_.Trim() } | Where-Object { $_ } | Select-Object -Last 1
-        AppID       = [regex]::Matches($Content, '\"appid\"\s+\"\d+\"') | Select-Object -ExpandProperty Value | ForEach-Object { $_ -split '"' } | ForEach-Object { $_.Trim() } | Where-Object { $_ } | Select-Object -Last 1
-        Library     = Split-Path -Parent $ManifestPath
-        AppManifest = $ManifestPath
-        InstallDir  = [regex]::Matches($Content, '\"installdir\"\s+\".*"') | Select-Object -ExpandProperty Value | ForEach-Object { $_ -split '"' } | ForEach-Object { $_.Trim() } | Where-Object { $_ } | Select-Object -Last 1
-        LastUpdated = [regex]::Matches($Manifest.Content, '\"LastUpdated\"\s+\"\d+\"') | Select-Object -ExpandProperty Value | ForEach-Object { 
-            $_ -split '"' } | ForEach-Object { 
-            $_.Trim() } | Where-Object { 
-            $_ } | Select-Object -Last 1 | Select-Object @{N = "LastUpdated"; E = { (Get-Date "1/1/1970").AddSeconds($_).ToLocalTime() } } | Select-Object -ExpandProperty LastUpdated
-        #[system.DateTimeOffset]::FromUnixTimeSeconds(1625346931)
+    Try {
+        $App = [pscustomobject]@{
+            Name        = [regex]::Matches($Content, '\"name\"\s+\".*"') | Select-Object -ExpandProperty Value | ForEach-Object { $_ -split '"' } | ForEach-Object { $_.Trim() } | Where-Object { $_ } | Select-Object -Last 1
+            AppID       = [regex]::Matches($Content, '\"appid\"\s+\"\d+\"') | Select-Object -ExpandProperty Value | ForEach-Object { $_ -split '"' } | ForEach-Object { $_.Trim() } | Where-Object { $_ } | Select-Object -Last 1
+            Library     = Split-Path -Parent $ManifestPath
+            AppManifest = $ManifestPath
+            InstallDir  = [regex]::Matches($Content, '\"installdir\"\s+\".*"') | Select-Object -ExpandProperty Value | ForEach-Object { $_ -split '"' } | ForEach-Object { $_.Trim() } | Where-Object { $_ } | Select-Object -Last 1
+            LastUpdated = [regex]::Matches($Manifest.Content, '\"LastUpdated\"\s+\"\d+\"') | Select-Object -ExpandProperty Value | ForEach-Object { 
+                $_ -split '"' } | ForEach-Object { 
+                $_.Trim() } | Where-Object { 
+                $_ } | Select-Object -Last 1 | Select-Object @{N = "LastUpdated"; E = { (Get-Date "1/1/1970").AddSeconds($_).ToLocalTime() } } | Select-Object -ExpandProperty LastUpdated
+            #[system.DateTimeOffset]::FromUnixTimeSeconds(1625346931)
+        }
+        Catch {
+            $App = [pscustomobject]@{
+                Name        = "Malformed App Manifest"
+                AppID       = "unknown"
+                AppManifest = $ManifestPath
+            }
+        }        
+    
     }
 
     #try to get ProtonDB rating
