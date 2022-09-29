@@ -232,7 +232,7 @@ While ($copymore -like "*y*") {
     Write-Host -ForegroundColor Green "$(Get-Date -format u) | Transferring Games to Deck..."
     ForEach ($Game in $SelectApps) {
         # Test for dest steam library
-        if(!$DeckLib.SteamLibrary -match ".*steamapps$"){
+        if(!($DeckLib.SteamLibrary -match ".*steamapps$")){
             $LibraryPath = "$($DeckLib.DeviceID)\steamapps"
             $null = New-Item -ItemType Directory -Path $LibraryPath  -Verbose
             $DeckLib | Add-Member SteamLibrary($LibraryPath) -Force
