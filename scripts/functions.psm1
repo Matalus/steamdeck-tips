@@ -133,15 +133,15 @@ function Convert-AppManifest ($Manifest, [switch]$Deck) {
                 $_ } | Select-Object -Last 1 | Select-Object @{N = "LastUpdated"; E = { (Get-Date "1/1/1970").AddSeconds($_).ToLocalTime() } } | Select-Object -ExpandProperty LastUpdated
             #[system.DateTimeOffset]::FromUnixTimeSeconds(1625346931)
         }
-        Catch {
-            $App = [pscustomobject]@{
-                Name        = "Malformed App Manifest"
-                AppID       = "unknown"
-                AppManifest = $ManifestPath
-            }
-        }        
-    
     }
+    Catch {
+        $App = [pscustomobject]@{
+            Name        = "Malformed App Manifest"
+            AppID       = "unknown"
+            AppManifest = $ManifestPath
+        }
+    }        
+
 
     #try to get ProtonDB rating
     # Try {
