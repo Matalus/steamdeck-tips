@@ -25,21 +25,13 @@
 ### Installing the Script
 - **Easy Method:** [Download Zip](https://github.com/Matalus/steamdeck-tips/archive/refs/heads/main.zip) And Place the `steamdeck-tips` folder anywhere on your PC
 - **Advanced Method (GIT):** (Assumes you have `git` installed https://git-scm.com/download/win)
-    1. Create an empty directory on your PC using `PowerShell` or `CMD`  
-
-        ```
-        mkdir steamdeck-tips
-        cd steamdeck-tips
-        ```
-        *You should now be inside the `steamdeck-tips` directory*
-
-    2. Run the following `git` commands from the `steamdeck-tips` directory
-
-       ```
-       git init
-       git remote add origin https://github.com/Matalus/steamdeck-tips.git
-       git pull origin master
-       ```
+    Run git clone using either `PowerShell` or `CMD`
+        
+    ```
+    git clone https://github.com/Matalus/steamdeck-tips.git
+    cd steamdeck-tips
+    ```
+    
 ### Running the Script
 
 <BR>
