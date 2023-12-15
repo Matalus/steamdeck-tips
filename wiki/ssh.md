@@ -25,12 +25,16 @@ passwd
 ```
 sudo systemctl enable sshd
 ```
-9. now run the following command to verify that SSHD is enabled
+9. now run the following command to start SSHD service
+```
+sudo systemctl start sshd.service
+```
+10. now run the following command to verify that SSHD is enabled
 ```
 sudo systemctl status sshd
 ```
-10. In the output look for `enabled;` on the **Loaded:** line
-11. Look for **running** on the `Active:` line
+11. In the output look for `enabled;` on the **Loaded:** line
+12. Look for **running** on the `Active:` line
 
   ![/images/sshd-status.jpg](/images/sshd-status.jpg)
 
@@ -47,7 +51,7 @@ sudo systemctl status sshd
             └─911 "sshd: /usr/bin/sshd -D [listener] 0 of 10-100 startups"
 ``` -->
 
-12. If all steps were followed SSH should be enabled, if not *ASK AN ADULT*
+13. If all steps were followed SSH should be enabled, if not *ASK AN ADULT*
 
 ---
 
